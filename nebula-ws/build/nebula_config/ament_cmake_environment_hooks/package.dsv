@@ -1,0 +1,4 @@
+source;share/nebula_config/local_setup.bash
+source;share/nebula_config/local_setup.dsv
+source;share/nebula_config/local_setup.sh
+source;share/nebula_config/local_setup.zsh

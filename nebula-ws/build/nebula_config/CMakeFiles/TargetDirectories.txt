@@ -1,0 +1,9 @@
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/uninstall.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/nebula_config_uninstall.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/test.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/edit_cache.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/rebuild_cache.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/list_install_components.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/install.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/install/local.dir
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/nebula_config/CMakeFiles/install/strip.dir

@@ -1,0 +1,16 @@
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/launch/joystick.launch.py
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/ament_index/resource_index/package_run_dependencies/nebula_bringup
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/ament_index/resource_index/parent_prefix_path/nebula_bringup
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/environment/ament_prefix_path.sh
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/environment/ament_prefix_path.dsv
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/environment/path.sh
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/environment/path.dsv
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/local_setup.bash
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/local_setup.sh
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/local_setup.zsh
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/local_setup.dsv
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/package.dsv
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/ament_index/resource_index/packages/nebula_bringup
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/cmake/nebula_bringupConfig.cmake
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/cmake/nebula_bringupConfig-version.cmake
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup/share/nebula_bringup/package.xml
