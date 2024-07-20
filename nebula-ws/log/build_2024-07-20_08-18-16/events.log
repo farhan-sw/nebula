@@ -1,0 +1,869 @@
+[0.000000] (-) TimerEvent: {}
+[0.000221] (-) JobUnselected: {'identifier': 'micro_ros_setup'}
+[0.000292] (-) JobUnselected: {'identifier': 'nebula_bringup'}
+[0.000304] (-) JobUnselected: {'identifier': 'nebula_config'}
+[0.000315] (micro_ros_msgs) JobQueued: {'identifier': 'micro_ros_msgs', 'dependencies': OrderedDict()}
+[0.000327] (micro_ros_agent) JobQueued: {'identifier': 'micro_ros_agent', 'dependencies': OrderedDict([('micro_ros_msgs', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs')])}
+[0.000339] (micro_ros_msgs) JobStarted: {'identifier': 'micro_ros_msgs'}
+[0.005569] (micro_ros_msgs) JobProgress: {'identifier': 'micro_ros_msgs', 'progress': 'cmake'}
+[0.005887] (micro_ros_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/src/uros/micro_ros_msgs', '-DUAGENT_BUILD_EXECUTABLE=OFF', '-DUAGENT_P2P_PROFILE=OFF', '--no-warn-unused-cli', '-DCMAKE_INSTALL_PREFIX=/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs'], 'cwd': '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'farhan-sw'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/farhan-sw'), ('OLDPWD', '/home/farhan-sw'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'id_ID.UTF-8'), ('MANAGERPID', '1062'), ('SYSTEMD_EXEC_PID', '1530'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7929'), ('COLCON_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'farhan-sw'), ('JOURNAL_STREAM', '8:25966'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'farhan-sw'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/farhan-sw/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/voodoo:@/tmp/.ICE-unix/1507,unix/voodoo:/tmp/.ICE-unix/1507'), ('INVOCATION_ID', '65d615b909dc4ba3988e9493fb40c4ae'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:4b247ccb-0c10-40f5-ab20-2e146a02f27c'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/local/lib/python3.10/dist-packages:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble')]), 'shell': False}
+[0.011377] (micro_ros_msgs) StdoutLine: {'line': b'Not searching for unused variables given on the command line.\n'}
+[0.051879] (micro_ros_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099999] (-) TimerEvent: {}
+[0.100194] (micro_ros_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.104561] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.164967] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.178127] (micro_ros_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.178452] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.179039] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.182087] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.200172] (-) TimerEvent: {}
+[0.241017] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.248389] (micro_ros_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.248551] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.249186] (micro_ros_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.251912] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.300255] (-) TimerEvent: {}
+[0.352476] (micro_ros_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.400402] (-) TimerEvent: {}
+[0.409386] (micro_ros_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.415515] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.424950] (micro_ros_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.474967] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.500484] (-) TimerEvent: {}
+[0.510182] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.600659] (-) TimerEvent: {}
+[0.676845] (micro_ros_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.700733] (-) TimerEvent: {}
+[0.799896] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.800802] (-) TimerEvent: {}
+[0.900996] (-) TimerEvent: {}
+[0.953058] (micro_ros_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.968635] (micro_ros_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[0.970516] (micro_ros_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.987580] (micro_ros_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[0.987689] (micro_ros_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.987751] (micro_ros_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.987794] (micro_ros_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.000130] (micro_ros_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.001056] (-) TimerEvent: {}
+[1.021733] (micro_ros_msgs) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.025220] (micro_ros_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.027089] (micro_ros_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.031936] (micro_ros_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.049136] (micro_ros_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[1.050598] (micro_ros_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs\n'}
+[1.055953] (micro_ros_msgs) CommandEnded: {'returncode': 0}
+[1.056417] (micro_ros_msgs) JobProgress: {'identifier': 'micro_ros_msgs', 'progress': 'build'}
+[1.056435] (micro_ros_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs', '--', '-j16', '-l16'], 'cwd': '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'farhan-sw'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/farhan-sw'), ('OLDPWD', '/home/farhan-sw'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'id_ID.UTF-8'), ('MANAGERPID', '1062'), ('SYSTEMD_EXEC_PID', '1530'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7929'), ('COLCON_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'farhan-sw'), ('JOURNAL_STREAM', '8:25966'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'farhan-sw'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/farhan-sw/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/voodoo:@/tmp/.ICE-unix/1507,unix/voodoo:/tmp/.ICE-unix/1507'), ('INVOCATION_ID', '65d615b909dc4ba3988e9493fb40c4ae'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:4b247ccb-0c10-40f5-ab20-2e146a02f27c'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/local/lib/python3.10/dist-packages:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble')]), 'shell': False}
+[1.081092] (micro_ros_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.087115] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.091540] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_copy_micro_ros_msgs\n'}
+[1.101139] (-) TimerEvent: {}
+[1.201393] (-) TimerEvent: {}
+[1.253528] (micro_ros_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[1.253911] (micro_ros_msgs) StdoutLine: {'line': b'creating micro_ros_msgs.egg-info\n'}
+[1.254127] (micro_ros_msgs) StdoutLine: {'line': b'writing micro_ros_msgs.egg-info/PKG-INFO\n'}
+[1.254320] (micro_ros_msgs) StdoutLine: {'line': b'writing dependency_links to micro_ros_msgs.egg-info/dependency_links.txt\n'}
+[1.254401] (micro_ros_msgs) StdoutLine: {'line': b'writing top-level names to micro_ros_msgs.egg-info/top_level.txt\n'}
+[1.254439] (micro_ros_msgs) StdoutLine: {'line': b"writing manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'\n"}
+[1.256103] (micro_ros_msgs) StdoutLine: {'line': b"reading manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'\n"}
+[1.256313] (micro_ros_msgs) StdoutLine: {'line': b"writing manifest file 'micro_ros_msgs.egg-info/SOURCES.txt'\n"}
+[1.272372] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_build_micro_ros_msgs_egg\n'}
+[1.301516] (-) TimerEvent: {}
+[1.321658] (micro_ros_msgs) StdoutLine: {'line': b'[  4%] Built target micro_ros_msgs__cpp\n'}
+[1.327632] (micro_ros_msgs) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.327832] (micro_ros_msgs) StdoutLine: {'line': b'[  8%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.327919] (micro_ros_msgs) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_c.dir/rosidl_generator_c/micro_ros_msgs/msg/detail/graph__functions.c.o\x1b[0m\n'}
+[1.327980] (micro_ros_msgs) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.328077] (micro_ros_msgs) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_c.dir/rosidl_generator_c/micro_ros_msgs/msg/detail/node__functions.c.o\x1b[0m\n'}
+[1.328180] (micro_ros_msgs) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_c.dir/rosidl_generator_c/micro_ros_msgs/msg/detail/entity__functions.c.o\x1b[0m\n'}
+[1.379530] (micro_ros_msgs) StdoutLine: {'line': b'[ 19%] \x1b[32m\x1b[1mLinking C shared library libmicro_ros_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[1.401611] (-) TimerEvent: {}
+[1.402644] (micro_ros_msgs) StdoutLine: {'line': b'[ 19%] Built target micro_ros_msgs__rosidl_generator_c\n'}
+[1.408973] (micro_ros_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.409099] (micro_ros_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.409142] (micro_ros_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.501716] (-) TimerEvent: {}
+[1.516268] (micro_ros_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/micro_ros_msgs/msg/entity__type_support.cpp.o\x1b[0m\n'}
+[1.516472] (micro_ros_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/micro_ros_msgs/msg/graph__type_support.cpp.o\x1b[0m\n'}
+[1.516561] (micro_ros_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/micro_ros_msgs/msg/node__type_support.cpp.o\x1b[0m\n'}
+[1.538616] (micro_ros_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/micro_ros_msgs/msg/detail/node__type_support.cpp.o\x1b[0m\n'}
+[1.538877] (micro_ros_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/micro_ros_msgs/msg/detail/graph__type_support.cpp.o\x1b[0m\n'}
+[1.539851] (micro_ros_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/micro_ros_msgs/msg/detail/entity__type_support.cpp.o\x1b[0m\n'}
+[1.560634] (micro_ros_msgs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/micro_ros_msgs/msg/detail/dds_fastrtps/entity__type_support.cpp.o\x1b[0m\n'}
+[1.561915] (micro_ros_msgs) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/micro_ros_msgs/msg/detail/dds_fastrtps/graph__type_support.cpp.o\x1b[0m\n'}
+[1.562031] (micro_ros_msgs) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/micro_ros_msgs/msg/detail/dds_fastrtps/node__type_support.cpp.o\x1b[0m\n'}
+[1.601832] (-) TimerEvent: {}
+[1.628683] (micro_ros_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/micro_ros_msgs/msg/graph__type_support.cpp.o\x1b[0m\n'}
+[1.631735] (micro_ros_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/micro_ros_msgs/msg/entity__type_support.cpp.o\x1b[0m\n'}
+[1.633138] (micro_ros_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/micro_ros_msgs/msg/node__type_support.cpp.o\x1b[0m\n'}
+[1.667476] (micro_ros_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[1.693517] (micro_ros_msgs) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/micro_ros_msgs/msg/detail/node__type_support.c.o\x1b[0m\n'}
+[1.693854] (micro_ros_msgs) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/micro_ros_msgs/msg/detail/entity__type_support.c.o\x1b[0m\n'}
+[1.694020] (micro_ros_msgs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/micro_ros_msgs/msg/detail/graph__type_support.c.o\x1b[0m\n'}
+[1.702007] (-) TimerEvent: {}
+[1.703378] (micro_ros_msgs) StdoutLine: {'line': b'[ 59%] Built target micro_ros_msgs__rosidl_typesupport_c\n'}
+[1.723885] (micro_ros_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/micro_ros_msgs/msg/detail/graph__type_support_c.cpp.o\x1b[0m\n'}
+[1.725610] (micro_ros_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/micro_ros_msgs/msg/detail/entity__type_support_c.cpp.o\x1b[0m\n'}
+[1.726098] (micro_ros_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/micro_ros_msgs/msg/detail/node__type_support_c.cpp.o\x1b[0m\n'}
+[1.733859] (micro_ros_msgs) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking C shared library libmicro_ros_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[1.774528] (micro_ros_msgs) StdoutLine: {'line': b'[ 68%] Built target micro_ros_msgs__rosidl_typesupport_introspection_c\n'}
+[1.784035] (micro_ros_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[1.802105] (-) TimerEvent: {}
+[1.814737] (micro_ros_msgs) StdoutLine: {'line': b'[ 70%] Built target micro_ros_msgs__rosidl_typesupport_cpp\n'}
+[1.902281] (-) TimerEvent: {}
+[1.991103] (micro_ros_msgs) StdoutLine: {'line': b'[ 72%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.002370] (-) TimerEvent: {}
+[2.012262] (micro_ros_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.015560] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libmicro_ros_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.040777] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_c\n'}
+[2.065391] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[2.065597] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] Built target micro_ros_msgs__rosidl_typesupport_introspection_cpp\n'}
+[2.078169] (micro_ros_msgs) StdoutLine: {'line': b'[ 76%] Built target micro_ros_msgs\n'}
+[2.099873] (micro_ros_msgs) StdoutLine: {'line': b'[ 78%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[2.102516] (-) TimerEvent: {}
+[2.202828] (-) TimerEvent: {}
+[2.303103] (-) TimerEvent: {}
+[2.403319] (-) TimerEvent: {}
+[2.426099] (micro_ros_msgs) StdoutLine: {'line': b'[ 78%] Built target micro_ros_msgs__py\n'}
+[2.438578] (micro_ros_msgs) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_py.dir/rosidl_generator_py/micro_ros_msgs/msg/_node_s.c.o\x1b[0m\n'}
+[2.438801] (micro_ros_msgs) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_py.dir/rosidl_generator_py/micro_ros_msgs/msg/_graph_s.c.o\x1b[0m\n'}
+[2.439008] (micro_ros_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_generator_py.dir/rosidl_generator_py/micro_ros_msgs/msg/_entity_s.c.o\x1b[0m\n'}
+[2.503492] (-) TimerEvent: {}
+[2.536693] (micro_ros_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/libmicro_ros_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[2.561942] (micro_ros_msgs) StdoutLine: {'line': b'[ 87%] Built target micro_ros_msgs__rosidl_generator_py\n'}
+[2.575975] (micro_ros_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[2.576139] (micro_ros_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[2.576187] (micro_ros_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/micro_ros_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[2.603599] (-) TimerEvent: {}
+[2.635078] (micro_ros_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.635239] (micro_ros_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.635286] (micro_ros_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.656696] (micro_ros_msgs) StdoutLine: {'line': b'[100%] Built target micro_ros_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[2.656891] (micro_ros_msgs) StdoutLine: {'line': b'[100%] Built target micro_ros_msgs__rosidl_typesupport_c__pyext\n'}
+[2.656936] (micro_ros_msgs) StdoutLine: {'line': b'[100%] Built target micro_ros_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.664188] (micro_ros_msgs) CommandEnded: {'returncode': 0}
+[2.703745] (-) TimerEvent: {}
+[2.732831] (micro_ros_msgs) JobProgress: {'identifier': 'micro_ros_msgs', 'progress': 'install'}
+[2.739236] (micro_ros_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs'], 'cwd': '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'farhan-sw'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/farhan-sw'), ('OLDPWD', '/home/farhan-sw'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'id_ID.UTF-8'), ('MANAGERPID', '1062'), ('SYSTEMD_EXEC_PID', '1530'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7929'), ('COLCON_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'farhan-sw'), ('JOURNAL_STREAM', '8:25966'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'farhan-sw'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/farhan-sw/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/voodoo:@/tmp/.ICE-unix/1507,unix/voodoo:/tmp/.ICE-unix/1507'), ('INVOCATION_ID', '65d615b909dc4ba3988e9493fb40c4ae'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:4b247ccb-0c10-40f5-ab20-2e146a02f27c'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/local/lib/python3.10/dist-packages:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble')]), 'shell': False}
+[2.744907] (micro_ros_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.745100] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/ament_index/resource_index/rosidl_interfaces/micro_ros_msgs\n'}
+[2.745733] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[2.745862] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[2.745948] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/entity.h\n'}
+[2.746014] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/node.h\n'}
+[2.746080] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[2.746145] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__struct.h\n'}
+[2.746217] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__type_support.h\n'}
+[2.746284] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__functions.h\n'}
+[2.746354] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__functions.c\n'}
+[2.746420] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__functions.h\n'}
+[2.746489] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__struct.h\n'}
+[2.746565] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__functions.h\n'}
+[2.746633] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__struct.h\n'}
+[2.746710] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__functions.c\n'}
+[2.746779] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__type_support.h\n'}
+[2.746833] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__functions.c\n'}
+[2.746901] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__type_support.h\n'}
+[2.746958] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/graph.h\n'}
+[2.747015] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[2.747071] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/library_path.sh\n'}
+[2.747127] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/library_path.dsv\n'}
+[2.747183] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_c.so\n'}
+[2.747266] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_c.so" to ""\n'}
+[2.747332] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[2.747406] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[2.747473] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[2.747529] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_fastrtps_c.h\n'}
+[2.747596] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_fastrtps_c.h\n'}
+[2.747650] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_fastrtps_c.h\n'}
+[2.747683] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[2.747721] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[2.747783] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[2.747835] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[2.747879] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[2.747915] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[2.747962] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[2.747998] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__type_support.c\n'}
+[2.748043] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_introspection_c.h\n'}
+[2.748094] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_introspection_c.h\n'}
+[2.748139] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__type_support.c\n'}
+[2.748187] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__type_support.c\n'}
+[2.748235] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_introspection_c.h\n'}
+[2.748359] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_c.so\n'}
+[2.748534] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[2.748620] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_c.so\n'}
+[2.748770] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_c.so" to ""\n'}
+[2.748820] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[2.748893] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[2.748930] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[2.748975] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__builder.hpp\n'}
+[2.749011] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__builder.hpp\n'}
+[2.749057] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__traits.hpp\n'}
+[2.749106] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__struct.hpp\n'}
+[2.749157] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__struct.hpp\n'}
+[2.749204] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__struct.hpp\n'}
+[2.749325] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__builder.hpp\n'}
+[2.749423] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__traits.hpp\n'}
+[2.749465] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__traits.hpp\n'}
+[2.749528] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/graph.hpp\n'}
+[2.749638] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/node.hpp\n'}
+[2.749679] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/entity.hpp\n'}
+[2.749763] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[2.749805] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[2.749844] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[2.749893] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.749931] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.749979] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/dds_fastrtps\n'}
+[2.750027] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.750063] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[2.750137] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[2.750412] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[2.750459] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs\n'}
+[2.750514] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg\n'}
+[2.750551] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail\n'}
+[2.750596] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.750632] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.750678] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/node__type_support.cpp\n'}
+[2.750724] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.750770] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/entity__type_support.cpp\n'}
+[2.750817] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/include/micro_ros_msgs/micro_ros_msgs/msg/detail/graph__type_support.cpp\n'}
+[2.750945] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[2.751228] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[2.751301] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_cpp.so\n'}
+[2.751458] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[2.751507] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/pythonpath.sh\n'}
+[2.751565] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/pythonpath.dsv\n'}
+[2.751636] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-3.0.1-py3.10.egg-info\n'}
+[2.751686] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-3.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[2.751738] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-3.0.1-py3.10.egg-info/top_level.txt\n'}
+[2.751788] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-3.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[2.751837] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs-3.0.1-py3.10.egg-info/PKG-INFO\n'}
+[2.751912] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs\n'}
+[2.751967] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/__init__.py\n'}
+[2.752019] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.752081] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.752156] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[2.752226] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[2.752297] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/libmicro_ros_msgs__rosidl_generator_py.so\n'}
+[2.752378] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg\n'}
+[2.752427] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/__init__.py\n'}
+[2.752478] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_node_s.c\n'}
+[2.752528] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_graph.py\n'}
+[2.752603] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_node.py\n'}
+[2.752671] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_entity_s.c\n'}
+[2.752731] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_graph_s.c\n'}
+[2.752791] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_entity.py\n'}
+[2.752853] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/_micro_ros_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[2.752922] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.775567] (micro_ros_msgs) StdoutLine: {'line': b"Listing '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs'...\n"}
+[2.775686] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/__init__.py'...\n"}
+[2.775728] (micro_ros_msgs) StdoutLine: {'line': b"Listing '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg'...\n"}
+[2.775764] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/__init__.py'...\n"}
+[2.775797] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_entity.py'...\n"}
+[2.775830] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_graph.py'...\n"}
+[2.775863] (micro_ros_msgs) StdoutLine: {'line': b"Compiling '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/msg/_node.py'...\n"}
+[2.778436] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.778500] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[2.778597] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.778748] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[2.778839] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.778986] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages/micro_ros_msgs/micro_ros_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[2.779063] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_py.so\n'}
+[2.779235] (micro_ros_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib/libmicro_ros_msgs__rosidl_generator_py.so" to ""\n'}
+[2.779281] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Graph.idl\n'}
+[2.779342] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Node.idl\n'}
+[2.779410] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Entity.idl\n'}
+[2.779482] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Graph.msg\n'}
+[2.779552] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Node.msg\n'}
+[2.779619] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/msg/Entity.msg\n'}
+[2.779689] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/ament_index/resource_index/package_run_dependencies/micro_ros_msgs\n'}
+[2.779773] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/ament_index/resource_index/parent_prefix_path/micro_ros_msgs\n'}
+[2.779846] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/ament_prefix_path.sh\n'}
+[2.779895] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/ament_prefix_path.dsv\n'}
+[2.779944] (micro_ros_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/path.sh\n'}
+[2.779992] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/environment/path.dsv\n'}
+[2.780038] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.bash\n'}
+[2.780110] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.sh\n'}
+[2.780184] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.zsh\n'}
+[2.780254] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/local_setup.dsv\n'}
+[2.780323] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/package.dsv\n'}
+[2.780404] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/ament_index/resource_index/packages/micro_ros_msgs\n'}
+[2.780495] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_cExport.cmake\n'}
+[2.780582] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[2.780699] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[2.780788] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[2.780914] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[2.780990] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[2.781093] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cExport.cmake\n'}
+[2.781165] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[2.781255] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_cppExport.cmake\n'}
+[2.781347] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[2.781419] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[2.781511] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[2.781585] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[2.781681] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[2.781757] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[2.781850] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_pyExport.cmake\n'}
+[2.781922] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/export_micro_ros_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[2.781994] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[2.782063] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[2.782136] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[2.782211] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[2.782282] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[2.782354] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[2.782429] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[2.782502] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgsConfig.cmake\n'}
+[2.782561] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake/micro_ros_msgsConfig-version.cmake\n'}
+[2.782631] (micro_ros_msgs) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/package.xml\n'}
+[2.784190] (micro_ros_msgs) CommandEnded: {'returncode': 0}
+[2.803886] (-) TimerEvent: {}
+[2.872151] (micro_ros_msgs) JobEnded: {'identifier': 'micro_ros_msgs', 'rc': 0}
+[2.872976] (micro_ros_agent) JobStarted: {'identifier': 'micro_ros_agent'}
+[2.878772] (micro_ros_agent) JobProgress: {'identifier': 'micro_ros_agent', 'progress': 'cmake'}
+[2.878892] (micro_ros_agent) Command: {'cmd': ['/usr/bin/cmake', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/src/uros/micro-ROS-Agent/micro_ros_agent', '-DUAGENT_BUILD_EXECUTABLE=OFF', '-DUAGENT_P2P_PROFILE=OFF', '--no-warn-unused-cli', '-DCMAKE_INSTALL_PREFIX=/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent'], 'cwd': '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'farhan-sw'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/farhan-sw'), ('OLDPWD', '/home/farhan-sw'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'id_ID.UTF-8'), ('MANAGERPID', '1062'), ('SYSTEMD_EXEC_PID', '1530'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7929'), ('COLCON_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'farhan-sw'), ('JOURNAL_STREAM', '8:25966'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'farhan-sw'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/farhan-sw/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/voodoo:@/tmp/.ICE-unix/1507,unix/voodoo:/tmp/.ICE-unix/1507'), ('INVOCATION_ID', '65d615b909dc4ba3988e9493fb40c4ae'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:4b247ccb-0c10-40f5-ab20-2e146a02f27c'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/local/lib/python3.10/dist-packages:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble')]), 'shell': False}
+[2.884205] (micro_ros_agent) StdoutLine: {'line': b'Not searching for unused variables given on the command line.\n'}
+[2.903990] (-) TimerEvent: {}
+[2.919860] (micro_ros_agent) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[2.924178] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[2.971165] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[2.975743] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[2.975921] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[2.976099] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.004151] (-) TimerEvent: {}
+[3.009165] (micro_ros_agent) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[3.013712] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.066363] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[3.070879] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[3.071108] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[3.071325] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[3.094073] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.095955] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[3.096121] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent\n'}
+[3.099914] (micro_ros_agent) CommandEnded: {'returncode': 0}
+[3.100249] (micro_ros_agent) JobProgress: {'identifier': 'micro_ros_agent', 'progress': 'build'}
+[3.100266] (micro_ros_agent) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent', '--', '-j16', '-l16'], 'cwd': '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'farhan-sw'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/farhan-sw'), ('OLDPWD', '/home/farhan-sw'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'id_ID.UTF-8'), ('MANAGERPID', '1062'), ('SYSTEMD_EXEC_PID', '1530'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7929'), ('COLCON_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'farhan-sw'), ('JOURNAL_STREAM', '8:25966'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'farhan-sw'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/farhan-sw/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/voodoo:@/tmp/.ICE-unix/1507,unix/voodoo:/tmp/.ICE-unix/1507'), ('INVOCATION_ID', '65d615b909dc4ba3988e9493fb40c4ae'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:4b247ccb-0c10-40f5-ab20-2e146a02f27c'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/local/lib/python3.10/dist-packages:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble')]), 'shell': False}
+[3.104231] (-) TimerEvent: {}
+[3.131757] (micro_ros_agent) StdoutLine: {'line': b"[  6%] \x1b[34m\x1b[1mCreating directories for 'xrceagent'\x1b[0m\n"}
+[3.177258] (micro_ros_agent) StdoutLine: {'line': b"[ 12%] \x1b[34m\x1b[1mPerforming download step (git clone) for 'xrceagent'\x1b[0m\n"}
+[3.188713] (micro_ros_agent) StderrLine: {'line': b"Cloning into 'xrceagent'...\n"}
+[3.204397] (-) TimerEvent: {}
+[3.304692] (-) TimerEvent: {}
+[3.404978] (-) TimerEvent: {}
+[3.505296] (-) TimerEvent: {}
+[3.605611] (-) TimerEvent: {}
+[3.705924] (-) TimerEvent: {}
+[3.806169] (-) TimerEvent: {}
+[3.906491] (-) TimerEvent: {}
+[4.006785] (-) TimerEvent: {}
+[4.107089] (-) TimerEvent: {}
+[4.207412] (-) TimerEvent: {}
+[4.307714] (-) TimerEvent: {}
+[4.408042] (-) TimerEvent: {}
+[4.508311] (-) TimerEvent: {}
+[4.608559] (-) TimerEvent: {}
+[4.708810] (-) TimerEvent: {}
+[4.809025] (-) TimerEvent: {}
+[4.909232] (-) TimerEvent: {}
+[5.009465] (-) TimerEvent: {}
+[5.109754] (-) TimerEvent: {}
+[5.209993] (-) TimerEvent: {}
+[5.310207] (-) TimerEvent: {}
+[5.410389] (-) TimerEvent: {}
+[5.510587] (-) TimerEvent: {}
+[5.610810] (-) TimerEvent: {}
+[5.711025] (-) TimerEvent: {}
+[5.811264] (-) TimerEvent: {}
+[5.911475] (-) TimerEvent: {}
+[6.011730] (-) TimerEvent: {}
+[6.111977] (-) TimerEvent: {}
+[6.212208] (-) TimerEvent: {}
+[6.312439] (-) TimerEvent: {}
+[6.412700] (-) TimerEvent: {}
+[6.479050] (micro_ros_agent) StderrLine: {'line': b"Switched to a new branch 'ros2'\n"}
+[6.479192] (micro_ros_agent) StdoutLine: {'line': b"Branch 'ros2' set up to track remote branch 'ros2' from 'origin'.\n"}
+[6.512818] (-) TimerEvent: {}
+[6.514134] (micro_ros_agent) StdoutLine: {'line': b"[ 18%] \x1b[34m\x1b[1mPerforming update step for 'xrceagent'\x1b[0m\n"}
+[6.612918] (-) TimerEvent: {}
+[6.713228] (-) TimerEvent: {}
+[6.813537] (-) TimerEvent: {}
+[6.913842] (-) TimerEvent: {}
+[7.014093] (-) TimerEvent: {}
+[7.114380] (-) TimerEvent: {}
+[7.214720] (-) TimerEvent: {}
+[7.264542] (micro_ros_agent) StderrLine: {'line': b'HEAD is now at c25243c Enable Domain Override on Reference and XML Participant (#351)\n'}
+[7.289807] (micro_ros_agent) StdoutLine: {'line': b"[ 25%] \x1b[34m\x1b[1mNo patch step for 'xrceagent'\x1b[0m\n"}
+[7.309457] (micro_ros_agent) StdoutLine: {'line': b"[ 31%] \x1b[34m\x1b[1mPerforming configure step for 'xrceagent'\x1b[0m\n"}
+[7.314850] (-) TimerEvent: {}
+[7.317085] (micro_ros_agent) StdoutLine: {'line': b'loading initial cache file /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent/agent/tmp/xrceagent-cache-.cmake\n'}
+[7.358685] (micro_ros_agent) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[7.364096] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[7.415052] (-) TimerEvent: {}
+[7.419462] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[7.425173] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[7.425412] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[7.425475] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[7.464508] (micro_ros_agent) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[7.469267] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[7.515199] (-) TimerEvent: {}
+[7.518809] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[7.523430] (micro_ros_agent) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[7.523501] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.523655] (micro_ros_agent) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.528423] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[7.572438] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[7.572857] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[7.615364] (-) TimerEvent: {}
+[7.616876] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[7.617186] (micro_ros_agent) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[7.625350] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[7.626536] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[7.626795] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent/agent/src/xrceagent-build\n'}
+[7.638964] (micro_ros_agent) StdoutLine: {'line': b"[ 37%] \x1b[34m\x1b[1mPerforming build step for 'xrceagent'\x1b[0m\n"}
+[7.662763] (micro_ros_agent) StdoutLine: {'line': b"[ 12%] \x1b[34m\x1b[1mCreating directories for 'uagent'\x1b[0m\n"}
+[7.701350] (micro_ros_agent) StdoutLine: {'line': b"[ 25%] \x1b[34m\x1b[1mNo download step for 'uagent'\x1b[0m\n"}
+[7.715271] (micro_ros_agent) StdoutLine: {'line': b"[ 37%] \x1b[34m\x1b[1mNo update step for 'uagent'\x1b[0m\n"}
+[7.715401] (-) TimerEvent: {}
+[7.728812] (micro_ros_agent) StdoutLine: {'line': b"[ 50%] \x1b[34m\x1b[1mNo patch step for 'uagent'\x1b[0m\n"}
+[7.742575] (micro_ros_agent) StdoutLine: {'line': b"[ 62%] \x1b[34m\x1b[1mPerforming configure step for 'uagent'\x1b[0m\n"}
+[7.748272] (micro_ros_agent) StdoutLine: {'line': b'loading initial cache file /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent/agent/src/xrceagent-build/uagent-prefix/tmp/uagent-cache-.cmake\n'}
+[7.751430] (micro_ros_agent) StdoutLine: {'line': b"-- Setting build type to 'Release' as none was specified.\n"}
+[7.771342] (micro_ros_agent) StdoutLine: {'line': b'-- Found tinyxml2: /usr/lib/x86_64-linux-gnu/libtinyxml2.so  \n'}
+[7.771457] (micro_ros_agent) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:438 (message):\n'}
+[7.771502] (micro_ros_agent) StderrLine: {'line': b'  The package name passed to `find_package_handle_standard_args` (tinyxml2)\n'}
+[7.771537] (micro_ros_agent) StderrLine: {'line': b'  does not match the name of the calling package (TinyXML2).  This can lead\n'}
+[7.771571] (micro_ros_agent) StderrLine: {'line': b'  to problems in calling code that expects `find_package` result variables\n'}
+[7.771605] (micro_ros_agent) StderrLine: {'line': b'  (e.g., `_FOUND`) to follow a certain pattern.\n'}
+[7.771638] (micro_ros_agent) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[7.771671] (micro_ros_agent) StderrLine: {'line': b'  cmake/modules/FindTinyXML2.cmake:40 (find_package_handle_standard_args)\n'}
+[7.771712] (micro_ros_agent) StderrLine: {'line': b'  /opt/ros/humble/share/fastrtps/cmake/fastrtps-config.cmake:51 (find_package)\n'}
+[7.771745] (micro_ros_agent) StderrLine: {'line': b'  CMakeLists.txt:153 (find_package)\n'}
+[7.771779] (micro_ros_agent) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[7.771812] (micro_ros_agent) StderrLine: {'line': b'\x1b[0m\n'}
+[7.808153] (micro_ros_agent) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[7.815342] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[7.815443] (-) TimerEvent: {}
+[7.822935] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[7.823319] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent/agent/src/xrceagent-build\n'}
+[7.835323] (micro_ros_agent) StdoutLine: {'line': b"[ 75%] \x1b[34m\x1b[1mPerforming build step for 'uagent'\x1b[0m\n"}
+[7.863098] (micro_ros_agent) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/AgentInstance.cpp.o\x1b[0m\n'}
+[7.863428] (micro_ros_agent) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/client/ProxyClient.cpp.o\x1b[0m\n'}
+[7.863525] (micro_ros_agent) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/Root.cpp.o\x1b[0m\n'}
+[7.863603] (micro_ros_agent) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/Agent.cpp.o\x1b[0m\n'}
+[7.863861] (micro_ros_agent) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/processor/Processor.cpp.o\x1b[0m\n'}
+[7.864094] (micro_ros_agent) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/participant/Participant.cpp.o\x1b[0m\n'}
+[7.864178] (micro_ros_agent) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/topic/Topic.cpp.o\x1b[0m\n'}
+[7.864282] (micro_ros_agent) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/publisher/Publisher.cpp.o\x1b[0m\n'}
+[7.864385] (micro_ros_agent) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/subscriber/Subscriber.cpp.o\x1b[0m\n'}
+[7.864468] (micro_ros_agent) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/datawriter/DataWriter.cpp.o\x1b[0m\n'}
+[7.864855] (micro_ros_agent) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/requester/Requester.cpp.o\x1b[0m\n'}
+[7.864972] (micro_ros_agent) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/datareader/DataReader.cpp.o\x1b[0m\n'}
+[7.865323] (micro_ros_agent) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/object/XRCEObject.cpp.o\x1b[0m\n'}
+[7.865890] (micro_ros_agent) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/replier/Replier.cpp.o\x1b[0m\n'}
+[7.866143] (micro_ros_agent) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/MessageHeader.cpp.o\x1b[0m\n'}
+[7.870693] (micro_ros_agent) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/XRCETypes.cpp.o\x1b[0m\n'}
+[7.915607] (-) TimerEvent: {}
+[8.024725] (-) TimerEvent: {}
+[8.132187] (-) TimerEvent: {}
+[8.232675] (-) TimerEvent: {}
+[8.333187] (-) TimerEvent: {}
+[8.433653] (-) TimerEvent: {}
+[8.534602] (-) TimerEvent: {}
+[8.586514] (micro_ros_agent) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/SubMessageHeader.cpp.o\x1b[0m\n'}
+[8.600156] (micro_ros_agent) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/message/InputMessage.cpp.o\x1b[0m\n'}
+[8.634784] (-) TimerEvent: {}
+[8.735699] (-) TimerEvent: {}
+[8.836684] (-) TimerEvent: {}
+[8.937377] (-) TimerEvent: {}
+[9.038029] (-) TimerEvent: {}
+[9.138679] (-) TimerEvent: {}
+[9.177153] (micro_ros_agent) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/message/OutputMessage.cpp.o\x1b[0m\n'}
+[9.207992] (micro_ros_agent) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/utils/ArgumentParser.cpp.o\x1b[0m\n'}
+[9.222787] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/Server.cpp.o\x1b[0m\n'}
+[9.238807] (-) TimerEvent: {}
+[9.249794] (micro_ros_agent) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/stream_framing/StreamFramingProtocol.cpp.o\x1b[0m\n'}
+[9.270757] (micro_ros_agent) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/custom/CustomAgent.cpp.o\x1b[0m\n'}
+[9.338928] (-) TimerEvent: {}
+[9.439637] (-) TimerEvent: {}
+[9.540674] (-) TimerEvent: {}
+[9.643023] (-) TimerEvent: {}
+[9.690297] (micro_ros_agent) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/udp/UDPv4AgentLinux.cpp.o\x1b[0m\n'}
+[9.743146] (-) TimerEvent: {}
+[9.844101] (-) TimerEvent: {}
+[9.944771] (-) TimerEvent: {}
+[10.045433] (-) TimerEvent: {}
+[10.146203] (-) TimerEvent: {}
+[10.246939] (-) TimerEvent: {}
+[10.348998] (-) TimerEvent: {}
+[10.449923] (-) TimerEvent: {}
+[10.550962] (-) TimerEvent: {}
+[10.651473] (-) TimerEvent: {}
+[10.752421] (-) TimerEvent: {}
+[10.853408] (-) TimerEvent: {}
+[10.954383] (-) TimerEvent: {}
+[11.054798] (-) TimerEvent: {}
+[11.113220] (micro_ros_agent) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/udp/UDPv6AgentLinux.cpp.o\x1b[0m\n'}
+[11.154928] (-) TimerEvent: {}
+[11.255527] (-) TimerEvent: {}
+[11.356133] (-) TimerEvent: {}
+[11.456771] (-) TimerEvent: {}
+[11.557433] (-) TimerEvent: {}
+[11.658075] (-) TimerEvent: {}
+[11.758702] (-) TimerEvent: {}
+[11.859382] (-) TimerEvent: {}
+[11.960037] (-) TimerEvent: {}
+[12.019884] (micro_ros_agent) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/tcp/TCPv4AgentLinux.cpp.o\x1b[0m\n'}
+[12.060169] (-) TimerEvent: {}
+[12.085074] (micro_ros_agent) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/tcp/TCPv6AgentLinux.cpp.o\x1b[0m\n'}
+[12.107310] (micro_ros_agent) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/SerialAgentLinux.cpp.o\x1b[0m\n'}
+[12.160339] (-) TimerEvent: {}
+[12.189878] (micro_ros_agent) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/TermiosAgentLinux.cpp.o\x1b[0m\n'}
+[12.260454] (-) TimerEvent: {}
+[12.361168] (-) TimerEvent: {}
+[12.461856] (-) TimerEvent: {}
+[12.562531] (-) TimerEvent: {}
+[12.625206] (micro_ros_agent) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/MultiSerialAgentLinux.cpp.o\x1b[0m\n'}
+[12.662698] (-) TimerEvent: {}
+[12.763296] (-) TimerEvent: {}
+[12.863898] (-) TimerEvent: {}
+[12.870096] (micro_ros_agent) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/MultiTermiosAgentLinux.cpp.o\x1b[0m\n'}
+[12.949949] (micro_ros_agent) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/serial/PseudoTerminalAgentLinux.cpp.o\x1b[0m\n'}
+[12.964027] (-) TimerEvent: {}
+[13.064660] (-) TimerEvent: {}
+[13.165269] (-) TimerEvent: {}
+[13.217962] (micro_ros_agent) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/can/CanAgentLinux.cpp.o\x1b[0m\n'}
+[13.265407] (-) TimerEvent: {}
+[13.366035] (-) TimerEvent: {}
+[13.466661] (-) TimerEvent: {}
+[13.567223] (-) TimerEvent: {}
+[13.667832] (-) TimerEvent: {}
+[13.768415] (-) TimerEvent: {}
+[13.789308] (micro_ros_agent) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/discovery/DiscoveryServerLinux.cpp.o\x1b[0m\n'}
+[13.868580] (-) TimerEvent: {}
+[13.969178] (-) TimerEvent: {}
+[14.069774] (-) TimerEvent: {}
+[14.104765] (micro_ros_agent) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/transport/discovery/DiscoveryServer.cpp.o\x1b[0m\n'}
+[14.169913] (-) TimerEvent: {}
+[14.270495] (-) TimerEvent: {}
+[14.371037] (-) TimerEvent: {}
+[14.471619] (-) TimerEvent: {}
+[14.572190] (-) TimerEvent: {}
+[14.672775] (-) TimerEvent: {}
+[14.773437] (-) TimerEvent: {}
+[14.874135] (-) TimerEvent: {}
+[14.887722] (micro_ros_agent) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/types/TopicPubSubType.cpp.o\x1b[0m\n'}
+[14.900411] (micro_ros_agent) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/xmlobjects/xmlobjects.cpp.o\x1b[0m\n'}
+[14.974262] (-) TimerEvent: {}
+[15.074820] (-) TimerEvent: {}
+[15.175387] (-) TimerEvent: {}
+[15.276055] (-) TimerEvent: {}
+[15.357366] (micro_ros_agent) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fast/FastEntities.cpp.o\x1b[0m\n'}
+[15.376184] (-) TimerEvent: {}
+[15.476777] (-) TimerEvent: {}
+[15.577396] (-) TimerEvent: {}
+[15.677990] (-) TimerEvent: {}
+[15.778562] (-) TimerEvent: {}
+[15.879122] (-) TimerEvent: {}
+[15.940666] (micro_ros_agent) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fast/FastMiddleware.cpp.o\x1b[0m\n'}
+[15.979255] (-) TimerEvent: {}
+[15.985562] (micro_ros_agent) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fastdds/FastDDSEntities.cpp.o\x1b[0m\n'}
+[16.017781] (micro_ros_agent) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding CXX object CMakeFiles/microxrcedds_agent.dir/src/cpp/middleware/fastdds/FastDDSMiddleware.cpp.o\x1b[0m\n'}
+[16.079383] (-) TimerEvent: {}
+[16.179988] (-) TimerEvent: {}
+[16.280612] (-) TimerEvent: {}
+[16.381222] (-) TimerEvent: {}
+[16.481849] (-) TimerEvent: {}
+[16.582767] (-) TimerEvent: {}
+[16.683455] (-) TimerEvent: {}
+[16.784052] (-) TimerEvent: {}
+[16.884650] (-) TimerEvent: {}
+[16.985187] (-) TimerEvent: {}
+[17.085733] (-) TimerEvent: {}
+[17.186356] (-) TimerEvent: {}
+[17.286719] (-) TimerEvent: {}
+[17.387073] (-) TimerEvent: {}
+[17.487461] (-) TimerEvent: {}
+[17.587840] (-) TimerEvent: {}
+[17.688204] (-) TimerEvent: {}
+[17.788536] (-) TimerEvent: {}
+[17.888911] (-) TimerEvent: {}
+[17.989266] (-) TimerEvent: {}
+[18.089694] (-) TimerEvent: {}
+[18.190099] (-) TimerEvent: {}
+[18.290452] (-) TimerEvent: {}
+[18.390811] (-) TimerEvent: {}
+[18.491159] (-) TimerEvent: {}
+[18.591535] (-) TimerEvent: {}
+[18.691834] (-) TimerEvent: {}
+[18.792173] (-) TimerEvent: {}
+[18.892505] (-) TimerEvent: {}
+[18.992792] (-) TimerEvent: {}
+[19.093071] (-) TimerEvent: {}
+[19.193361] (-) TimerEvent: {}
+[19.293636] (-) TimerEvent: {}
+[19.393970] (-) TimerEvent: {}
+[19.494322] (-) TimerEvent: {}
+[19.594616] (-) TimerEvent: {}
+[19.694889] (-) TimerEvent: {}
+[19.795248] (-) TimerEvent: {}
+[19.895564] (-) TimerEvent: {}
+[19.995866] (-) TimerEvent: {}
+[20.096186] (-) TimerEvent: {}
+[20.196522] (-) TimerEvent: {}
+[20.296835] (-) TimerEvent: {}
+[20.397094] (-) TimerEvent: {}
+[20.497404] (-) TimerEvent: {}
+[20.597718] (-) TimerEvent: {}
+[20.698023] (-) TimerEvent: {}
+[20.798328] (-) TimerEvent: {}
+[20.898626] (-) TimerEvent: {}
+[20.998934] (-) TimerEvent: {}
+[21.046389] (micro_ros_agent) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libmicroxrcedds_agent.so\x1b[0m\n'}
+[21.099094] (-) TimerEvent: {}
+[21.199369] (-) TimerEvent: {}
+[21.261008] (micro_ros_agent) StdoutLine: {'line': b'[100%] Built target microxrcedds_agent\n'}
+[21.275328] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mNo install step for 'uagent'\x1b[0m\n"}
+[21.289470] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mCompleted 'uagent'\x1b[0m\n"}
+[21.299498] (-) TimerEvent: {}
+[21.307582] (micro_ros_agent) StdoutLine: {'line': b'Built target uagent\n'}
+[21.322021] (micro_ros_agent) StdoutLine: {'line': b"[ 43%] \x1b[34m\x1b[1mPerforming install step for 'xrceagent'\x1b[0m\n"}
+[21.348429] (micro_ros_agent) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target microxrcedds_agent\x1b[0m\n'}
+[21.382619] (micro_ros_agent) StdoutLine: {'line': b'[100%] Built target microxrcedds_agent\n'}
+[21.393532] (micro_ros_agent) StdoutLine: {'line': b'\x1b[36mInstall the project...\x1b[0m\n'}
+[21.398233] (micro_ros_agent) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[21.398389] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.4.1\n'}
+[21.399572] (-) TimerEvent: {}
+[21.400725] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.4\n'}
+[21.400931] (micro_ros_agent) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so.2.4.1" to ""\n'}
+[21.401006] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib/libmicroxrcedds_agent.so\n'}
+[21.401046] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent\n'}
+[21.401082] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware\n'}
+[21.401119] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/fast\n'}
+[21.401256] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/fast/FastEntities.hpp\n'}
+[21.401330] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/fast/FastMiddleware.hpp\n'}
+[21.401368] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds\n'}
+[21.401424] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds/FastDDSEntities.hpp\n'}
+[21.401463] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/fastdds/FastDDSMiddleware.hpp\n'}
+[21.401522] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/utils\n'}
+[21.401578] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/utils/Callbacks.hpp\n'}
+[21.401623] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/ced\n'}
+[21.401659] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/ced/CedMiddleware.hpp\n'}
+[21.401714] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/ced/CedEntities.hpp\n'}
+[21.401750] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/middleware/Middleware.hpp\n'}
+[21.401786] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/Agent.hpp\n'}
+[21.401837] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/processor\n'}
+[21.401880] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/processor/Processor.hpp\n'}
+[21.401915] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/subscriber\n'}
+[21.401958] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/subscriber/Subscriber.hpp\n'}
+[21.402000] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/logger\n'}
+[21.402046] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/logger/Logger.hpp\n'}
+[21.402079] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/message\n'}
+[21.402113] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/message/Packet.hpp\n'}
+[21.402161] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/message/InputMessage.hpp\n'}
+[21.402205] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/message/OutputMessage.hpp\n'}
+[21.402239] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/reader\n'}
+[21.402284] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/reader/Reader.hpp\n'}
+[21.402331] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/visibility.hpp\n'}
+[21.402366] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/replier\n'}
+[21.402411] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/replier/Replier.hpp\n'}
+[21.402444] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/object\n'}
+[21.402491] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/object/XRCEObject.hpp\n'}
+[21.402530] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport\n'}
+[21.402564] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/p2p\n'}
+[21.402598] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/p2p/AgentDiscovererLinux.hpp\n'}
+[21.402647] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/p2p/AgentDiscoverer.hpp\n'}
+[21.402690] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/discovery\n'}
+[21.402731] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServerWindows.hpp\n'}
+[21.402765] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServer.hpp\n'}
+[21.402800] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/discovery/DiscoveryServerLinux.hpp\n'}
+[21.402845] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/stream_framing\n'}
+[21.402892] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/stream_framing/StreamFramingProtocol.hpp\n'}
+[21.402934] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/SessionManager.hpp\n'}
+[21.402967] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/can\n'}
+[21.403001] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/can/CanAgentLinux.hpp\n'}
+[21.403043] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint\n'}
+[21.403079] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/IPv4EndPoint.hpp\n'}
+[21.403114] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/CustomEndPoint.hpp\n'}
+[21.403160] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/IPv6EndPoint.hpp\n'}
+[21.403195] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/CanEndPoint.hpp\n'}
+[21.403241] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/MultiSerialEndPoint.hpp\n'}
+[21.403276] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/endpoint/SerialEndPoint.hpp\n'}
+[21.403322] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/Server.hpp\n'}
+[21.403356] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/serial\n'}
+[21.403400] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/serial/TermiosAgentLinux.hpp\n'}
+[21.403445] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/serial/PseudoTerminalAgentLinux.hpp\n'}
+[21.403480] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/serial/MultiSerialAgentLinux.hpp\n'}
+[21.403523] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/serial/MultiTermiosAgentLinux.hpp\n'}
+[21.403573] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/serial/baud_rate_table_linux.h\n'}
+[21.403616] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/serial/SerialAgentLinux.hpp\n'}
+[21.403667] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/udp\n'}
+[21.403701] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv4AgentLinux.hpp\n'}
+[21.403747] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv4AgentWindows.hpp\n'}
+[21.403791] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv6AgentLinux.hpp\n'}
+[21.403837] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/udp/UDPv6AgentWindows.hpp\n'}
+[21.403889] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/custom\n'}
+[21.403933] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/custom/CustomAgent.hpp\n'}
+[21.403984] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/tcp\n'}
+[21.404019] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv6AgentLinux.hpp\n'}
+[21.404061] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv4AgentLinux.hpp\n'}
+[21.404106] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPConnection.hpp\n'}
+[21.404153] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPServerBase.hpp\n'}
+[21.404213] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv6AgentWindows.hpp\n'}
+[21.404268] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/tcp/TCPv4AgentWindows.hpp\n'}
+[21.404324] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/TransportRc.hpp\n'}
+[21.404379] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/util\n'}
+[21.404423] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/util/InterfaceLinux.hpp\n'}
+[21.404468] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/transport/util/InterfaceWindows.hpp\n'}
+[21.404519] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/scheduler\n'}
+[21.404576] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/scheduler/Scheduler.hpp\n'}
+[21.404658] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/scheduler/PacketScheduler.hpp\n'}
+[21.404744] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/p2p\n'}
+[21.404816] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/p2p/InternalClientManager.hpp\n'}
+[21.404895] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/p2p/InternalClient.hpp\n'}
+[21.404972] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client\n'}
+[21.405066] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client/ProxyClient.hpp\n'}
+[21.405118] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client/session\n'}
+[21.405151] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client/session/SessionInfo.hpp\n'}
+[21.405196] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client/session/stream\n'}
+[21.405233] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client/session/stream/OutputStream.hpp\n'}
+[21.405282] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client/session/stream/InputStream.hpp\n'}
+[21.405330] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/client/session/Session.hpp\n'}
+[21.405364] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/topic\n'}
+[21.405415] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/topic/Topic.hpp\n'}
+[21.405450] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/datawriter\n'}
+[21.405497] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/datawriter/DataWriter.hpp\n'}
+[21.405533] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils\n'}
+[21.405568] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/SeqNum.hpp\n'}
+[21.405616] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/Time.hpp\n'}
+[21.405660] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/Functions.hpp\n'}
+[21.405694] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/SharedMutexPriority.hpp\n'}
+[21.405738] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/SharedMutex.hpp\n'}
+[21.405782] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/Conversion.hpp\n'}
+[21.405828] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/ArgumentParser.hpp\n'}
+[21.405886] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/Color.hpp\n'}
+[21.405945] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/utils/TokenBucket.hpp\n'}
+[21.406001] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/requester\n'}
+[21.406046] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/requester/Requester.hpp\n'}
+[21.406093] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/Root.hpp\n'}
+[21.406139] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/types\n'}
+[21.406182] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/types/Optional.hpp\n'}
+[21.406228] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/types/XRCETypes.hpp\n'}
+[21.406587] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/types/MessageHeader.hpp\n'}
+[21.406636] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/types/SubMessageHeader.hpp\n'}
+[21.406683] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/types/TopicPubSubType.hpp\n'}
+[21.406731] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/publisher\n'}
+[21.406776] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/publisher/Publisher.hpp\n'}
+[21.406825] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/datareader\n'}
+[21.406860] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/datareader/DataReader.hpp\n'}
+[21.406905] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/participant\n'}
+[21.406949] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/participant/Participant.hpp\n'}
+[21.406997] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/AgentInstance.hpp\n'}
+[21.407076] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentTargets.cmake\n'}
+[21.407168] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentTargets-release.cmake\n'}
+[21.407241] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/include/uxr/agent/config.hpp\n'}
+[21.407313] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/microxrcedds_agent/LICENSE\n'}
+[21.407395] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentConfig.cmake\n'}
+[21.407456] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/microxrcedds_agent/cmake/microxrcedds_agentConfigVersion.cmake\n'}
+[21.418520] (micro_ros_agent) StdoutLine: {'line': b"[ 50%] \x1b[34m\x1b[1mCompleted 'xrceagent'\x1b[0m\n"}
+[21.437557] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] Built target xrceagent\n'}
+[21.449619] (micro_ros_agent) StdoutLine: {'line': b"[ 56%] \x1b[34m\x1b[1mCreating directories for 'micro_ros_agent'\x1b[0m\n"}
+[21.488769] (micro_ros_agent) StdoutLine: {'line': b"[ 62%] \x1b[34m\x1b[1mNo download step for 'micro_ros_agent'\x1b[0m\n"}
+[21.499733] (-) TimerEvent: {}
+[21.502892] (micro_ros_agent) StdoutLine: {'line': b"[ 68%] \x1b[34m\x1b[1mNo update step for 'micro_ros_agent'\x1b[0m\n"}
+[21.516621] (micro_ros_agent) StdoutLine: {'line': b"[ 75%] \x1b[34m\x1b[1mNo patch step for 'micro_ros_agent'\x1b[0m\n"}
+[21.530378] (micro_ros_agent) StdoutLine: {'line': b"[ 81%] \x1b[34m\x1b[1mPerforming configure step for 'micro_ros_agent'\x1b[0m\n"}
+[21.536190] (micro_ros_agent) StdoutLine: {'line': b'loading initial cache file /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent/micro_ros_agent-prefix/tmp/micro_ros_agent-cache-.cmake\n'}
+[21.539593] (micro_ros_agent) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[21.599891] (-) TimerEvent: {}
+[21.630202] (micro_ros_agent) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[21.700002] (-) TimerEvent: {}
+[21.726548] (micro_ros_agent) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[21.730366] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for C++ include pthread.h\n'}
+[21.783443] (micro_ros_agent) StdoutLine: {'line': b'-- Looking for C++ include pthread.h - found\n'}
+[21.783640] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[21.800162] (-) TimerEvent: {}
+[21.837597] (micro_ros_agent) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[21.838207] (micro_ros_agent) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[21.841675] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_cmake: 3.1.5 (/opt/ros/humble/share/rosidl_cmake/cmake)\n'}
+[21.842806] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[21.855525] (micro_ros_agent) StdoutLine: {'line': b'-- Found fastrtps_cmake_module: 2.2.2 (/opt/ros/humble/share/fastrtps_cmake_module/cmake)\n'}
+[21.857046] (micro_ros_agent) StdoutLine: {'line': b'-- Found rmw_dds_common: 1.6.0 (/opt/ros/humble/share/rmw_dds_common/cmake)\n'}
+[21.877125] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[21.883146] (micro_ros_agent) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[21.889000] (micro_ros_agent) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[21.898774] (micro_ros_agent) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[21.900223] (-) TimerEvent: {}
+[21.914650] (micro_ros_agent) StdoutLine: {'line': b'-- Found rmw_fastrtps_shared_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_shared_cpp/cmake)\n'}
+[21.951389] (micro_ros_agent) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[21.952593] (micro_ros_agent) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[21.954247] (micro_ros_agent) StdoutLine: {'line': b'-- Found ament_cmake_gtest: 1.3.9 (/opt/ros/humble/share/ament_cmake_gtest/cmake)\n'}
+[21.954677] (micro_ros_agent) StdoutLine: {'line': b'-- Found micro_ros_msgs: 3.0.1 (/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/share/micro_ros_msgs/cmake)\n'}
+[22.000402] (-) TimerEvent: {}
+[22.002870] (micro_ros_agent) StdoutLine: {'line': b'-- Configuring done\n'}
+[22.007678] (micro_ros_agent) StdoutLine: {'line': b'-- Generating done\n'}
+[22.008599] (micro_ros_agent) StdoutLine: {'line': b'-- Build files have been written to: /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent\n'}
+[22.023211] (micro_ros_agent) StdoutLine: {'line': b"[ 87%] \x1b[34m\x1b[1mPerforming build step for 'micro_ros_agent'\x1b[0m\n"}
+[22.050917] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/main.cpp.o\x1b[0m\n'}
+[22.051150] (micro_ros_agent) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/graph_manager/graph_manager.cpp.o\x1b[0m\n'}
+[22.051227] (micro_ros_agent) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/graph_manager/graph_typesupport.cpp.o\x1b[0m\n'}
+[22.051284] (micro_ros_agent) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/Agent.cpp.o\x1b[0m\n'}
+[22.051344] (micro_ros_agent) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/micro_ros_agent.dir/src/agent/utils/demangle.cpp.o\x1b[0m\n'}
+[22.100515] (-) TimerEvent: {}
+[22.200980] (-) TimerEvent: {}
+[22.301384] (-) TimerEvent: {}
+[22.401680] (-) TimerEvent: {}
+[22.502047] (-) TimerEvent: {}
+[22.602414] (-) TimerEvent: {}
+[22.702759] (-) TimerEvent: {}
+[22.803124] (-) TimerEvent: {}
+[22.903497] (-) TimerEvent: {}
+[23.003864] (-) TimerEvent: {}
+[23.104225] (-) TimerEvent: {}
+[23.204574] (-) TimerEvent: {}
+[23.304911] (-) TimerEvent: {}
+[23.405292] (-) TimerEvent: {}
+[23.505633] (-) TimerEvent: {}
+[23.605923] (-) TimerEvent: {}
+[23.706285] (-) TimerEvent: {}
+[23.806643] (-) TimerEvent: {}
+[23.907008] (-) TimerEvent: {}
+[24.007468] (-) TimerEvent: {}
+[24.107778] (-) TimerEvent: {}
+[24.208128] (-) TimerEvent: {}
+[24.308441] (-) TimerEvent: {}
+[24.329268] (micro_ros_agent) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable micro_ros_agent\x1b[0m\n'}
+[24.408608] (-) TimerEvent: {}
+[24.508901] (-) TimerEvent: {}
+[24.537313] (micro_ros_agent) StdoutLine: {'line': b'[100%] Built target micro_ros_agent\n'}
+[24.552205] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mNo install step for 'micro_ros_agent'\x1b[0m\n"}
+[24.565455] (micro_ros_agent) StdoutLine: {'line': b"\x1b[34m\x1b[1mCompleted 'micro_ros_agent'\x1b[0m\n"}
+[24.583206] (micro_ros_agent) StdoutLine: {'line': b'Built target micro_ros_agent\n'}
+[24.590161] (micro_ros_agent) CommandEnded: {'returncode': 0}
+[24.609083] (-) TimerEvent: {}
+[24.613106] (micro_ros_agent) JobProgress: {'identifier': 'micro_ros_agent', 'progress': 'install'}
+[24.613856] (micro_ros_agent) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent'], 'cwd': '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'farhan-sw'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/lib:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/farhan-sw'), ('OLDPWD', '/home/farhan-sw'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'id_ID.UTF-8'), ('MANAGERPID', '1062'), ('SYSTEMD_EXEC_PID', '1530'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7929'), ('COLCON_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'farhan-sw'), ('JOURNAL_STREAM', '8:25966'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'farhan-sw'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/farhan-sw/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/voodoo:@/tmp/.ICE-unix/1507,unix/voodoo:/tmp/.ICE-unix/1507'), ('INVOCATION_ID', '65d615b909dc4ba3988e9493fb40c4ae'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:4b247ccb-0c10-40f5-ab20-2e146a02f27c'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_agent'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs/local/lib/python3.10/dist-packages:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/ros2_socketcan_msgs:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_bringup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_setup:/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent:/home/farhan-sw/Documents/Github/learn-ros2/2-intermediate/ros2_ws/install/my_robot_description:/opt/ros/humble')]), 'shell': False}
+[24.618323] (micro_ros_agent) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[24.618378] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/ament_index/resource_index/package_run_dependencies/micro_ros_agent\n'}
+[24.618493] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/ament_index/resource_index/parent_prefix_path/micro_ros_agent\n'}
+[24.618584] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/environment/ament_prefix_path.sh\n'}
+[24.618621] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/environment/ament_prefix_path.dsv\n'}
+[24.618670] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/environment/path.sh\n'}
+[24.618723] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/environment/path.dsv\n'}
+[24.618758] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.bash\n'}
+[24.618803] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.sh\n'}
+[24.618869] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.zsh\n'}
+[24.618940] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/local_setup.dsv\n'}
+[24.619012] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/package.dsv\n'}
+[24.619088] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/ament_index/resource_index/packages/micro_ros_agent\n'}
+[24.619155] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[24.619232] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/cmake/micro_ros_agentConfig.cmake\n'}
+[24.619295] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/cmake/micro_ros_agentConfig-version.cmake\n'}
+[24.619367] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/package.xml\n'}
+[24.619504] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib/micro_ros_agent/micro_ros_agent\n'}
+[24.620520] (micro_ros_agent) StdoutLine: {'line': b'-- Set runtime path of "/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/lib/micro_ros_agent/micro_ros_agent" to ""\n'}
+[24.620627] (micro_ros_agent) StdoutLine: {'line': b'-- Up-to-date: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/launch\n'}
+[24.620664] (micro_ros_agent) StdoutLine: {'line': b'-- Installing: /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/micro_ros_agent/share/micro_ros_agent/launch/micro_ros_agent_launch.py\n'}
+[24.621793] (micro_ros_agent) CommandEnded: {'returncode': 0}
+[24.657784] (micro_ros_agent) JobEnded: {'identifier': 'micro_ros_agent', 'rc': 0}
+[24.658353] (-) EventReactorShutdown: {}

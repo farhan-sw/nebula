@@ -1,0 +1,5 @@
+[0.015s] Invoking command in '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_setup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_setup -- -j16 -l16
+[0.030s] [0mCMake Error: The source directory "/home/farhan-sw/Documents/Github/nebula/nebula-ws/src/src/micro_ros_setup" does not exist.
+[0.031s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.031s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.033s] Invoked command in '/home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_setup' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/farhan-sw/Documents/Github/nebula/nebula-ws/build/micro_ros_setup -- -j16 -l16
