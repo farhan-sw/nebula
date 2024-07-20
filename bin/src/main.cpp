@@ -84,7 +84,7 @@ void setup() {
     "cmd_vel_joy"));
 
   // Create timer
-  const unsigned int timer_timeout = 1000; // Increase timer interval to 50ms (20 Hz)
+  const unsigned int timer_timeout = 50; // Increase timer interval to 50ms (20 Hz)
   RCCHECK(rclc_timer_init_default(
     &timer,
     &support,
@@ -106,8 +106,8 @@ void setup() {
 }
 
 void loop() {
-  delay(50); // Reduce delay in the loop
-  RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(50))); // Reduce executor spin time
+  delay(100); // Reduce delay in the loop
+  RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100))); // Reduce executor spin time
 
   // Process data received from subscriber
   // For example, if the received linear x is greater than 0.2 led will turn on otherwise off
