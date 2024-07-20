@@ -1,4 +1,4 @@
-/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config/share/nebula_config/nebula_config/joystik.yaml
+/home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config/share/nebula_config/nebula_config/joystick.yaml
 /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config/share/ament_index/resource_index/package_run_dependencies/nebula_config
 /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config/share/ament_index/resource_index/parent_prefix_path/nebula_config
 /home/farhan-sw/Documents/Github/nebula/nebula-ws/install/nebula_config/share/nebula_config/environment/ament_prefix_path.sh

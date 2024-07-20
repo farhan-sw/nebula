@@ -77,3 +77,8 @@ board_microros_transport = serial
 lib_deps =
     https://github.com/micro-ROS/micro_ros_platformio
 ```
+
+### Run micro-ROS on ROS2
+```bash
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
+```
