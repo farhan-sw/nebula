@@ -80,5 +80,5 @@ lib_deps =
 
 ### Run micro-ROS on ROS2
 ```bash
-ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
 ```
