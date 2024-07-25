@@ -3,7 +3,7 @@
 #include <esp_flash.h>
 #include <core_version.h> // For ARDUINO_ESP32_RELEASE
 
-static const uint32_t DESIRED_BIT_RATE = 1000UL * 1000UL ; // 1 Mb/s
+static const uint32_t DESIRED_BIT_RATE = 500UL * 1000UL ; // 500kb/s
 
 #define RX GPIO_NUM_16
 #define TX GPIO_NUM_17
@@ -14,7 +14,7 @@ static const uint32_t DESIRED_BIT_RATE = 1000UL * 1000UL ; // 1 Mb/s
  */
 bool isDebugReceive = false;
 static uint32_t lastReceive = 0 ;
-#define DEBUG_RECEIVE_INTERVAL 100
+#define DEBUG_RECEIVE_INTERVAL 500
 
 void setup_CAN() {
   pinMode (LED_BUILTIN, OUTPUT);
@@ -25,8 +25,7 @@ void setup_CAN() {
   // Configure ESP32 CAN
   Serial2.println ("Configure ESP32 CAN") ;
   ACAN_ESP32_Settings settings (DESIRED_BIT_RATE) ;
-  settings.mRequestedCANMode = ACAN_ESP32_Settings::LoopBackMode ;
-  // settings.mRequestedCANMode = ACAN_ESP32_Settings::NormalMode ;
+  settings.mRequestedCANMode = ACAN_ESP32_Settings::NormalMode ;
   settings.mRxPin = GPIO_NUM_21 ; // Optional, default Tx pin is GPIO_NUM_4
   settings.mTxPin = GPIO_NUM_22 ; // Optional, default Rx pin is GPIO_NUM_5
   const uint32_t errorCode = ACAN_ESP32::can.begin (settings) ;
@@ -61,15 +60,15 @@ void setup_CAN() {
 
 void send_CAN_message(int16_t linear_x, int16_t linear_y, int16_t angular_z) {
   CANMessage frame;
-  frame.id = 0x123; // Example ID
-  frame.len = 6; // 2 bytes for each value
+  frame.id = 0x16; // Example ID
+  frame.len = 8; // 2 bytes for each value
   
-  frame.data[0] = linear_x & 0xFF; // LSB of linear_x
-  frame.data[1] = (linear_x >> 8) & 0xFF; // MSB of linear_x
-  frame.data[2] = linear_y & 0xFF; // LSB of linear_y
-  frame.data[3] = (linear_y >> 8) & 0xFF; // MSB of linear_y
-  frame.data[4] = angular_z & 0xFF; // LSB of angular_z
-  frame.data[5] = (angular_z >> 8) & 0xFF; // MSB of angular_z
+  frame.data[2] = linear_x & 0xFF; // LSB of linear_x
+  frame.data[3] = (linear_x >> 8) & 0xFF; // MSB of linear_x
+  frame.data[4] = linear_y & 0xFF; // LSB of linear_y
+  frame.data[5] = (linear_y >> 8) & 0xFF; // MSB of linear_y
+  frame.data[0] = angular_z & 0xFF; // LSB of angular_z
+  frame.data[1] = (angular_z >> 8) & 0xFF; // MSB of angular_z
 
   const bool ok = ACAN_ESP32::can.tryToSend(frame);
 }
@@ -77,9 +76,9 @@ void send_CAN_message(int16_t linear_x, int16_t linear_y, int16_t angular_z) {
 void receive_CAN_message() {
     CANMessage frame;
     while (ACAN_ESP32::can.receive(frame)) {
-        int16_t linear_x = frame.data[1] << 8 | frame.data[0];
-        int16_t linear_y = frame.data[3] << 8 | frame.data[2];
-        int16_t angular_z = frame.data[5] << 8 | frame.data[4];
+        int16_t linear_x = frame.data[3] << 8 | frame.data[2];
+        int16_t linear_y = frame.data[5] << 8 | frame.data[4];
+        int16_t angular_z = frame.data[7] << 8 | frame.data[6];
         
         Serial2.print("Received: ");
         Serial2.print("linear_x: ");
@@ -90,9 +89,6 @@ void receive_CAN_message() {
         Serial2.println(angular_z);
     }
 }
-
-
-// ----------------------------------------------------------------------------------------
 
 #include <micro_ros_arduino.h>
 #include <stdio.h>
@@ -133,13 +129,17 @@ void error_loop() {
   }
 }
 
+int16_t buffered_linear_x = 0;
+int16_t buffered_linear_y = 0;
+int16_t buffered_angular_z = 0;
+bool new_data_received = false;
+
 void subscription_callback(const void *msgin) {
   const geometry_msgs__msg__Twist * msg = (const geometry_msgs__msg__Twist *)msgin;
-  int16_t linear_x = (int16_t)(msg->linear.x * 100);
-  int16_t linear_y = (int16_t)(msg->linear.y * 100);
-  int16_t angular_z = (int16_t)(msg->angular.z * 100);
-  
-  send_CAN_message(linear_x, linear_y, angular_z);
+  buffered_linear_x = (int16_t)(msg->linear.x * 100);
+  buffered_linear_y = (int16_t)(msg->linear.y * 100);
+  buffered_angular_z = (int16_t)(msg->angular.z * 100);
+  new_data_received = true;
 }
 
 bool create_entities() {
@@ -217,23 +217,34 @@ void loop_microros() {
   }
 }
 
-// ----------------------------------------------------------------------------------------
+// FreeRTOS task to handle CAN message sending
+void can_send_task(void *pvParameters) {
+  for(;;) {
+    if (new_data_received) {
+      send_CAN_message(buffered_linear_x, buffered_linear_y, buffered_angular_z);
+      new_data_received = false;
+    }
+    vTaskDelay(pdMS_TO_TICKS(10)); // 10ms interval
+  }
+}
 
 void setup() {
   setup_microros();
   setup_CAN();
+
+  // Create FreeRTOS task for CAN message sending
+  xTaskCreate(can_send_task, "CAN Send Task", 2048, NULL, 1, NULL);
 }
 
 void loop() {
   loop_microros();
 
-  isDebugReceive = false;
-    if(lastReceive < millis()){
-        lastReceive += DEBUG_RECEIVE_INTERVAL;
-        digitalWrite (LED_BUILTIN, !digitalRead (LED_BUILTIN)) ;
-        if(isDebugReceive) {
-        receive_CAN_message();
-        }
+  isDebugReceive = true;
+  if (lastReceive < millis()) {
+    lastReceive += DEBUG_RECEIVE_INTERVAL;
+    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+    if (isDebugReceive) {
+      receive_CAN_message();
     }
-
+  }
 }
