@@ -1,0 +1,6 @@
+class BaseControl {
+private:
+
+public:
+
+};
