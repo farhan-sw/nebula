@@ -2,94 +2,6 @@
 #include <esp_chip_info.h>
 #include <esp_flash.h>
 #include <core_version.h> // For ARDUINO_ESP32_RELEASE
-
-static const uint32_t DESIRED_BIT_RATE = 500UL * 1000UL ; // 500kb/s
-
-#define RX GPIO_NUM_16
-#define TX GPIO_NUM_17
-#define BAUDRATE_SERIAL 115200
-
-/**
- * For Debugging purposes
- */
-bool isDebugReceive = false;
-static uint32_t lastReceive = 0 ;
-#define DEBUG_RECEIVE_INTERVAL 500
-
-void setup_CAN() {
-  pinMode (LED_BUILTIN, OUTPUT);
-  digitalWrite (LED_BUILTIN, HIGH);
-  Serial2.begin (BAUDRATE_SERIAL, SERIAL_8N1, RX, TX); // Set RX2 to GPIO 16 and TX2 to GPIO 17
-  delay(100);
-  
-  // Configure ESP32 CAN
-  Serial2.println ("Configure ESP32 CAN") ;
-  ACAN_ESP32_Settings settings (DESIRED_BIT_RATE) ;
-  settings.mRequestedCANMode = ACAN_ESP32_Settings::NormalMode ;
-  settings.mRxPin = GPIO_NUM_21 ; // Optional, default Tx pin is GPIO_NUM_4
-  settings.mTxPin = GPIO_NUM_22 ; // Optional, default Rx pin is GPIO_NUM_5
-  const uint32_t errorCode = ACAN_ESP32::can.begin (settings) ;
-  if (errorCode == 0) {
-    Serial2.print ("Bit Rate prescaler: ") ;
-    Serial2.println (settings.mBitRatePrescaler) ;
-    Serial2.print ("Time Segment 1:     ") ;
-    Serial2.println (settings.mTimeSegment1) ;
-    Serial2.print ("Time Segment 2:     ") ;
-    Serial2.println (settings.mTimeSegment2) ;
-    Serial2.print ("RJW:                ") ;
-    Serial2.println (settings.mRJW) ;
-    Serial2.print ("Triple Sampling:    ") ;
-    Serial2.println (settings.mTripleSampling ? "yes" : "no") ;
-    Serial2.print ("Actual bit rate:    ") ;
-    Serial2.print (settings.actualBitRate ()) ;
-    Serial2.println (" bit/s") ;
-    Serial2.print ("Exact bit rate ?    ") ;
-    Serial2.println (settings.exactBitRate () ? "yes" : "no") ;
-    Serial2.print ("Distance            ") ;
-    Serial2.print (settings.ppmFromDesiredBitRate ()) ;
-    Serial2.println (" ppm") ;
-    Serial2.print ("Sample point:       ") ;
-    Serial2.print (settings.samplePointFromBitStart ()) ;
-    Serial2.println ("%") ;
-    Serial2.println ("Configuration OK!");
-  } else {
-    Serial2.print ("Configuration error 0x") ;
-    Serial2.println (errorCode, HEX) ;
-  }
-}
-
-void send_CAN_message(int16_t linear_x, int16_t linear_y, int16_t angular_z) {
-  CANMessage frame;
-  frame.id = 0x16; // Example ID
-  frame.len = 8; // 2 bytes for each value
-  
-  frame.data[2] = linear_x & 0xFF; // LSB of linear_x
-  frame.data[3] = (linear_x >> 8) & 0xFF; // MSB of linear_x
-  frame.data[4] = linear_y & 0xFF; // LSB of linear_y
-  frame.data[5] = (linear_y >> 8) & 0xFF; // MSB of linear_y
-  frame.data[0] = angular_z & 0xFF; // LSB of angular_z
-  frame.data[1] = (angular_z >> 8) & 0xFF; // MSB of angular_z
-
-  const bool ok = ACAN_ESP32::can.tryToSend(frame);
-}
-
-void receive_CAN_message() {
-    CANMessage frame;
-    while (ACAN_ESP32::can.receive(frame)) {
-        int16_t linear_x = frame.data[3] << 8 | frame.data[2];
-        int16_t linear_y = frame.data[5] << 8 | frame.data[4];
-        int16_t angular_z = frame.data[7] << 8 | frame.data[6];
-        
-        Serial2.print("Received: ");
-        Serial2.print("linear_x: ");
-        Serial2.print(linear_x);
-        Serial2.print(", linear_y: ");
-        Serial2.print(linear_y);
-        Serial2.print(", angular_z: ");
-        Serial2.println(angular_z);
-    }
-}
-
 #include <micro_ros_arduino.h>
 #include <stdio.h>
 #include <rcl/rcl.h>
@@ -99,21 +11,20 @@ void receive_CAN_message() {
 #include <geometry_msgs/msg/twist.h>
 #include <rmw_microros/rmw_microros.h>
 
+static const uint32_t DESIRED_BIT_RATE = 500UL * 1000UL; // 500kb/s
+
+#define RX GPIO_NUM_16
+#define TX GPIO_NUM_17
+#define BAUDRATE_SERIAL 115200
 #define LED_PIN 2
+
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){return false;}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 #define EXECUTE_EVERY_N_MS(MS, X)  do { \
   static volatile int64_t init = -1; \
   if (init == -1) { init = uxr_millis();} \
   if (uxr_millis() - init > MS) { X; init = uxr_millis();} \
-} while (0)\
-
-rcl_subscription_t subscriber;
-geometry_msgs__msg__Twist msg;
-rclc_executor_t executor;
-rcl_allocator_t allocator;
-rclc_support_t support;
-rcl_node_t node;
+} while (0)
 
 enum states {
   WAITING_AGENT,
@@ -122,20 +33,112 @@ enum states {
   AGENT_DISCONNECTED
 } state;
 
-void error_loop() {
-  while(1) {
-    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
-    delay(100);
-  }
-}
+bool isDebugReceive = false;
+static uint32_t lastReceive = 0;
+#define DEBUG_RECEIVE_INTERVAL 500
+
+rcl_subscription_t subscriber;
+geometry_msgs__msg__Twist msg;
+rclc_executor_t executor;
+rcl_allocator_t allocator;
+rclc_support_t support;
+rcl_node_t node;
 
 int16_t buffered_linear_x = 0;
 int16_t buffered_linear_y = 0;
 int16_t buffered_angular_z = 0;
 bool new_data_received = false;
 
+void error_loop() {
+  while (1) {
+    digitalWrite(LED_PIN, !digitalRead(LED_PIN));
+    delay(100);
+  }
+}
+
+void setup_CAN() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
+  Serial2.begin(BAUDRATE_SERIAL, SERIAL_8N1, RX, TX); // Set RX2 to GPIO 16 and TX2 to GPIO 17
+  delay(100);
+  
+  // Configure ESP32 CAN
+  Serial2.println("Configure ESP32 CAN");
+  ACAN_ESP32_Settings settings(DESIRED_BIT_RATE);
+  settings.mRequestedCANMode = ACAN_ESP32_Settings::NormalMode;
+  settings.mRxPin = GPIO_NUM_21;
+  settings.mTxPin = GPIO_NUM_22;
+  const uint32_t errorCode = ACAN_ESP32::can.begin(settings);
+  if (errorCode == 0) {
+    Serial2.print("Bit Rate prescaler: ");
+    Serial2.println(settings.mBitRatePrescaler);
+    Serial2.print("Time Segment 1:     ");
+    Serial2.println(settings.mTimeSegment1);
+    Serial2.print("Time Segment 2:     ");
+    Serial2.println(settings.mTimeSegment2);
+    Serial2.print("RJW:                ");
+    Serial2.println(settings.mRJW);
+    Serial2.print("Triple Sampling:    ");
+    Serial2.println(settings.mTripleSampling ? "yes" : "no");
+    Serial2.print("Actual bit rate:    ");
+    Serial2.print(settings.actualBitRate());
+    Serial2.println(" bit/s");
+    Serial2.print("Exact bit rate ?    ");
+    Serial2.println(settings.exactBitRate() ? "yes" : "no");
+    Serial2.print("Distance            ");
+    Serial2.print(settings.ppmFromDesiredBitRate());
+    Serial2.println(" ppm");
+    Serial2.print("Sample point:       ");
+    Serial2.print(settings.samplePointFromBitStart());
+    Serial2.println("%");
+    Serial2.println("Configuration OK!");
+  } else {
+    Serial2.print("Configuration error 0x");
+    Serial2.println(errorCode, HEX);
+  }
+}
+
+void send_CAN_message(int16_t linear_x, int16_t linear_y, int16_t angular_z) {
+  CANMessage frame;
+  frame.id = 0x16; // Example ID
+  frame.len = 8; // 2 bytes for each value
+
+  frame.data[0] = linear_x & 0xFF; // LSB of linear_x
+  frame.data[1] = (linear_x >> 8) & 0xFF; // MSB of linear_x
+  frame.data[2] = linear_y & 0xFF; // LSB of linear_y
+  frame.data[3] = (linear_y >> 8) & 0xFF; // MSB of linear_y
+  frame.data[4] = angular_z & 0xFF; // LSB of angular_z
+  frame.data[5] = (angular_z >> 8) & 0xFF; // MSB of angular_z
+
+  const bool ok = ACAN_ESP32::can.tryToSend(frame);
+  if (!ok) {
+    Serial2.println("Failed to send CAN message");
+  }
+}
+
+void receive_CAN_message() {
+  CANMessage frame;
+  while (ACAN_ESP32::can.receive(frame)) {
+    if (frame.len == 8) {
+      int16_t linear_x = frame.data[1] << 8 | frame.data[0];
+      int16_t linear_y = frame.data[3] << 8 | frame.data[2];
+      int16_t angular_z = frame.data[5] << 8 | frame.data[4];
+      
+      Serial2.print("Received: ");
+      Serial2.print("linear_x: ");
+      Serial2.print(linear_x);
+      Serial2.print(", linear_y: ");
+      Serial2.print(linear_y);
+      Serial2.print(", angular_z: ");
+      Serial2.println(angular_z);
+    } else {
+      Serial2.println("Received CAN message with unexpected length");
+    }
+  }
+}
+
 void subscription_callback(const void *msgin) {
-  const geometry_msgs__msg__Twist * msg = (const geometry_msgs__msg__Twist *)msgin;
+  const geometry_msgs__msg__Twist *msg = (const geometry_msgs__msg__Twist *)msgin;
   buffered_linear_x = (int16_t)(msg->linear.x * 100);
   buffered_linear_y = (int16_t)(msg->linear.y * 100);
   buffered_angular_z = (int16_t)(msg->angular.z * 100);
@@ -173,8 +176,8 @@ bool create_entities() {
 }
 
 void destroy_entities() {
-  rmw_context_t * rmw_context = rcl_context_get_rmw_context(&support.context);
-  (void) rmw_uros_set_context_entity_destroy_session_timeout(rmw_context, 0);
+  rmw_context_t *rmw_context = rcl_context_get_rmw_context(&support.context);
+  (void)rmw_uros_set_context_entity_destroy_session_timeout(rmw_context, 0);
 
   rcl_subscription_fini(&subscriber, &node);
   rclc_executor_fini(&executor);
@@ -200,7 +203,7 @@ void loop_microros() {
       state = (true == create_entities()) ? AGENT_CONNECTED : WAITING_AGENT;
       if (state == WAITING_AGENT) {
         destroy_entities();
-      };
+      }
       break;
     case AGENT_CONNECTED:
       EXECUTE_EVERY_N_MS(200, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_CONNECTED : AGENT_DISCONNECTED;);
@@ -219,12 +222,12 @@ void loop_microros() {
 
 // FreeRTOS task to handle CAN message sending
 void can_send_task(void *pvParameters) {
-  for(;;) {
+  for (;;) {
     if (new_data_received) {
       send_CAN_message(buffered_linear_x, buffered_linear_y, buffered_angular_z);
       new_data_received = false;
     }
-    vTaskDelay(pdMS_TO_TICKS(10)); // 10ms interval
+    vTaskDelay(pdMS_TO_TICKS(1000)); // 10ms interval
   }
 }
 
@@ -239,12 +242,17 @@ void setup() {
 void loop() {
   loop_microros();
 
-  isDebugReceive = true;
-  if (lastReceive < millis()) {
-    lastReceive += DEBUG_RECEIVE_INTERVAL;
-    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
-    if (isDebugReceive) {
-      receive_CAN_message();
-    }
+  if(buffered_linear_x != 0 || buffered_linear_y != 0 || buffered_angular_z)
+  {
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    digitalWrite(LED_BUILTIN, LOW);
   }
+  // if (lastReceive < millis()) {
+  //   lastReceive = millis() + DEBUG_RECEIVE_INTERVAL;
+  //   digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+  //   if (isDebugReceive) {
+  //     receive_CAN_message();
+  //   }
+  // }
 }

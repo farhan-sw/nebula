@@ -2,9 +2,6 @@
     path = nebula-ws/src/micro_ros_setup
     url = https://github.com/micro-ROS/micro_ros_platformio
 
-[submodule "nebula-ws/src/ros2_socketcan"]
-    path = nebula-ws/src/ros2_socketcan
-    url = https://github.com/autowarefoundation/ros2_socketcan.git
 [submodule "nebula-ws/nebula-ws/src/ros2_socketcan"]
 	path = nebula-ws/nebula-ws/src/ros2_socketcan
 	url = https://github.com/autowarefoundation/ros2_socketcan

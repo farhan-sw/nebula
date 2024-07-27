@@ -121,7 +121,7 @@ MovingAverage movAvg_speed_BR(10);
 
 // set timer
 uint32_t prevTime = us_ticker_read();
-uint32_t samplingADRC = 6 * 1000; // mikroSecond
+uint32_t samplingADRC = 7 * 1000; // mikroSecond
 
 // ====================== ADRC ===================
 bool isDebugADRC = false;
@@ -142,15 +142,16 @@ ADRC_V2 adrc_motor_BR(samplingADRC / 1000000.0f, b0_FrontMotor_normal, tSettle_B
 bool isDebugInverseKinematics = false;
 // Konstanta
 #define L 0.28867   
-#define r 0.15
-#define gamma 0.0
+#define r 0.075
+#define gamma 30.0 
 float cosGamma = cos(gamma * M_PI / 180.0);
 float sinGamma = sin(gamma * M_PI / 180.0);
 
-void inverseKinematics(float Vn, float V, float W, float *wm_front, float *wm_BL, float *wm_BR){ 
-    *wm_front = (1/r) * (Vn + L * W);
-    *wm_BL = (1/r) * (-0.5 * V + (sqrt(3)/2) * Vn + L * W);
-    *wm_BR = (1/r) * (-0.5 * V - (sqrt(3)/2) * Vn + L * W);
+void inverseKinematics(float Vy, float Vx, float W, float *wm_front, float *wm_BL, float *wm_BR){ 
+    *wm_front = -Vx + (L * W);
+    *wm_BL = sinGamma * Vx - cosGamma * Vy + (L * W);
+    *wm_BR = sinGamma * Vx + cosGamma * Vy + (L * W);
+
 }
 
 
@@ -204,18 +205,18 @@ int main()
 
         if (us_ticker_read() - prevTime > samplingADRC) {
             // Proses Inverse Kinematics
-            inverseKinematics(master.getMotor1()/100.0f, master.getMotor2()/100.0f, master.getInteger()/100.0f, &wm_front, &wm_BL, &wm_BR);
+            inverseKinematics(master.getMotor1()/1000.0f, master.getMotor2()/1000.0f, master.getInteger()/1000.0f, &wm_front, &wm_BL, &wm_BR);
 
             // realsetPoint = adrc_motor_F.fhan_setPointTrajectory(setPoint, 5);
-            setPointFront = adrc_motor_F.fhan_setPointTrajectory(wm_front, 5);
-            setPointBL = adrc_motor_BL.fhan_setPointTrajectory(wm_BL, 5);
-            setPointBR = adrc_motor_BR.fhan_setPointTrajectory(wm_BR, 5);
+            setPointFront = adrc_motor_F.fhan_setPointTrajectory(wm_front, 0);
+            setPointBL = adrc_motor_BL.fhan_setPointTrajectory(wm_BL, 0);
+            setPointBR = adrc_motor_BR.fhan_setPointTrajectory(wm_BR, 0);
 
             // Print Hasil Inverse Kinematics
-            isDebugInverseKinematics = true;
+            isDebugInverseKinematics = false;
             if(isDebugInverseKinematics)
             {
-                printf("wm_front: %6f wm_BL: %6f wm_BR: %6f setPointFront: %6f setPointBL: %6f setPointBR: %6f Vn: %6f V: %6f W: %6f\n", wm_front, wm_BL, wm_BR, setPointFront, setPointBL, setPointBR, master.getMotor1()/100.0f, master.getMotor2()/100.0f, master.getInteger()/100.0f);
+                printf("wm_front: %6f wm_BL: %6f wm_BR: %6f setPointFront: %6f setPointBL: %6f setPointBR: %6f Vn: %6f V: %6f W: %6f\n", wm_front, wm_BL, wm_BR, setPointFront, setPointBL, setPointBR, master.getMotor1()/1000.0f, master.getMotor2()/1000.0f, master.getInteger()/1000.0f);
             }
             
             prevTime = us_ticker_read();
