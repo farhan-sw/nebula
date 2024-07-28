@@ -1,6 +1,6 @@
 # SETUP PROJECT NEBULA
 
-[Table of Contents](#table-of-contents)
+### Table of Contents
 - [SETUP ROS2 DEPENDENCIES](#setup-ros2-dependencies)
 - [Setup Micro-ROS on ESP32](#setup-micro-ros-on-esp32)
   - [Setup ROS2 Workspace](#setup-ros2-workspace)
