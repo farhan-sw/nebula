@@ -1,15 +1,15 @@
 #include "mbed.h"
-#include "../../KRAI_library/Pinout/F407VET6_2023.h"
-#include "../../KRAI_library/encoderKRAI/encoderKRAI.h"
-#include "../../KRAI_library/Motor/Motor.h"
-#include "../../KRAI_library/MovingAverage/MovingAverage.h"
-#include "../../KRAI_library/ADRC_V2/ADRC_V2.h"
+#include "../KRAI_library/Pinout/F407VET6_2023.h"
+#include "../KRAI_library/encoderKRAI/encoderKRAI.h"
+#include "../KRAI_library/Motor/Motor.h"
+#include "../KRAI_library/MovingAverage/MovingAverage.h"
+#include "../KRAI_library/ADRC_V2/ADRC_V2.h"
 
 
 //======================================================================
 // =============================== CAN BUS Setup========================
-#include "../../KRAI_library/CanBusKRAI/BMAktuatorKRAI.hpp"
-#include "../../KRAI_library/Pinout/BoardManagerV1.h"
+#include "../KRAI_library/CanBusKRAI/BMAktuatorKRAI.hpp"
+#include "../KRAI_library/Pinout/BoardManagerV1.h"
 
 uint32_t millis = 0;
 

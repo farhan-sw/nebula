@@ -18,7 +18,7 @@ run: ninja push
 win: ninja pushwin
 
 configure:
-	mbed-tools configure -m $(NUCLEO) -t GCC_ARM --mbed-os-path "../../mbed-os"
+	mbed-tools configure -m $(NUCLEO) -t GCC_ARM --mbed-os-path "../mbed-os"
 
 cmake:
 	cmake -S . -B cmake_build/$(NUCLEO)/develop/GCC_ARM -GNinja
