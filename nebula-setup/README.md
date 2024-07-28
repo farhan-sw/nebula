@@ -22,6 +22,14 @@ validate the installation by running the following command:
 ```bash
 ros2 run joy joy_enumerate_devices
 ```
+3. Make sure ros2_socketcan is installed
+```bash
+git submodule update --init --recursive
+```
+or clone from the repository in /src folder
+```bash
+https://github.com/autowarefoundation/ros2_socketcan
+```
 
 ## SETUP MICRO-ROS ON ESP32
 [back to top](#table-of-contents)
