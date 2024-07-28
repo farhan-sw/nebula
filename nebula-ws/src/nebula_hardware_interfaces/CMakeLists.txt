@@ -11,11 +11,16 @@ find_package(rclcpp REQUIRED)
 find_package(can_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
-add_executable(nebula_can_publisher src/nebula_can_publisher.cpp)
-ament_target_dependencies(nebula_can_publisher rclcpp can_msgs geometry_msgs)
+add_executable(joystick_can_base src/joystick_can_base.cpp)
+ament_target_dependencies(joystick_can_base rclcpp can_msgs geometry_msgs)
 
 install(TARGETS
-  nebula_can_publisher
+  joystick_can_base
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(PROGRAMS
+  scripts/setup_can.sh
   DESTINATION lib/${PROJECT_NAME}
 )
 

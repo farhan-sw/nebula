@@ -1,7 +1,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
-#include "std_msgs/msg/header.hpp"
-#include "can_msgs/msg/frame.hpp" // Include the message definition
+#include "can_msgs/msg/frame.hpp"
 
 class CanSendNode : public rclcpp::Node
 {

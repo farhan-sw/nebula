@@ -1,0 +1,7 @@
+CANJoyNode:
+  ros__parameters:
+    cmd_vel_topic: "/cmd_vel_joy"
+    can_bus_topic: "/to_can_bus"
+    publish_interval: 10
+    can_id_base: 22
+    scale_angular: 1000
