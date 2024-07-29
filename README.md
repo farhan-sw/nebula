@@ -26,3 +26,8 @@ nebula
 ├── nebula-ws
 ```
 
+Explanation:
+- mbed-microros: Folder yang berisi project micro-ROS pada platform arduino dan PlatformIO
+- nebula-mbed: Folder yang berisi project mbed-os dan KRAI-Library
+- nebula-ws: Folder yang berisi project ROS2
+- nebul-setup: Folder yang berisi setup project nebula
