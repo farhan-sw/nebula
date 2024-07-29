@@ -22,6 +22,7 @@ DigitalOut led(PA_1);
 #define CAN_PRINT_TS        1000
 
 BMAktuatorKRAI master(22, &millis);
+BMAktuatorKRAI can_theta(23, &millis);
 
 uint32_t prevTimerCAN = us_ticker_read();
 uint32_t samplingCAN_MS = 5 * 1000; // mikroSecond
@@ -144,13 +145,14 @@ bool isDebugInverseKinematics = false;
 #define L 0.28867   
 #define r 0.075
 #define gamma 30.0 
+float theta_from_can = 0.0;
 float cosGamma = cos(gamma * M_PI / 180.0);
 float sinGamma = sin(gamma * M_PI / 180.0);
 
-void inverseKinematics(float Vy, float Vx, float W, float *wm_front, float *wm_BL, float *wm_BR){ 
+void inverseKinematics(float Vy, float Vx, float W, float theta, float *wm_front, float *wm_BL, float *wm_BR){ 
     *wm_front = -Vx + (L * W);
-    *wm_BL = sinGamma * Vx - cosGamma * Vy + (L * W);
-    *wm_BR = sinGamma * Vx + cosGamma * Vy + (L * W);
+    *wm_BL = sin(theta * M_PI / 180.0) * Vx - cos(theta * M_PI / 180.0) * Vy + (L * W);
+    *wm_BR = sin(theta * M_PI / 180.0) * Vx + cos(theta * M_PI / 180.0) * Vy + (L * W);
 
 }
 
@@ -199,13 +201,21 @@ int main()
             {
                 led = !led;
             }
+
+            if (can_theta.readingCAN())
+            {
+                led = !led;
+            }
         }
+
+        // can_theta.printData(250);
 
         // master.printData(100);
 
         if (us_ticker_read() - prevTime > samplingADRC) {
             // Proses Inverse Kinematics
-            inverseKinematics(master.getMotor1()/1000.0f, master.getMotor2()/1000.0f, master.getInteger()/1000.0f, &wm_front, &wm_BL, &wm_BR);
+            theta_from_can = can_theta.getInteger() * 1.0f;
+            inverseKinematics(master.getMotor1()/1000.0f, master.getMotor2()/1000.0f, master.getInteger()/1000.0f, theta_from_can,&wm_front, &wm_BL, &wm_BR);
 
             // realsetPoint = adrc_motor_F.fhan_setPointTrajectory(setPoint, 5);
             setPointFront = adrc_motor_F.fhan_setPointTrajectory(wm_front, 0);

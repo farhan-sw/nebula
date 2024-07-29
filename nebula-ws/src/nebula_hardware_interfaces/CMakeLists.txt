@@ -10,12 +10,17 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(can_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 add_executable(joystick_can_base src/joystick_can_base.cpp)
 ament_target_dependencies(joystick_can_base rclcpp can_msgs geometry_msgs)
 
+add_executable(joystick_logic_theta src/joystick_logic_theta.cpp)
+ament_target_dependencies(joystick_logic_theta rclcpp can_msgs geometry_msgs sensor_msgs)
+
 install(TARGETS
   joystick_can_base
+  joystick_logic_theta
   DESTINATION lib/${PROJECT_NAME}
 )
 
