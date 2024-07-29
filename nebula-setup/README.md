@@ -21,6 +21,8 @@ sudo apt install joystick jstest-gtk evtest
 validate the installation by running the following command:
 ```bash
 ros2 run joy joy_enumerate_devices
+ros2 run joy joy_node # <-- Run in first terminal
+ros2 topic echo /joy # <-- Run in second terminal
 ```
 3. Make sure ros2_socketcan is installed
 ```bash
