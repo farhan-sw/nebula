@@ -18,6 +18,11 @@ unset AMENT_PREFIX_PATH
 unset CMAKE_PREFIX_PATH
 ```
 
+- Jika error gazebo, lakukan
+```bash
+killall gzserver
+killall gzclient
+```
 
 ### References
 - [1] [Gamepad by piborg](https://github.com/piborg/Gamepad)

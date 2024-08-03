@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/farhan-sw/Documents/Github/learn-ros2/3-advanced/ros2_ws/install/myrobot_interfaces/include/**",
+        "/home/farhan-sw/Documents/Github/microros_ws/install/micro_ros_agent/include/**",
+        "/home/farhan-sw/Documents/Github/microros_ws/install/micro_ros_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

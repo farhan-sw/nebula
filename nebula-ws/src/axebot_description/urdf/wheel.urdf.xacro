@@ -29,7 +29,7 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="file://$(find nebula_description)/meshes/roller.stl"/>
+                    <mesh filename="file://$(find axebot_description)/meshes/roller.stl"/>
                 </geometry>
                 <material name="green"/>
             </visual>
@@ -37,7 +37,7 @@
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="file://$(find nebula_description)/meshes/roller.stl"/>
+                    <mesh filename="file://$(find axebot_description)/meshes/roller.stl"/>
                 </geometry>
             </collision>
 
@@ -99,7 +99,7 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="file://$(find nebula_description)/meshes/rim.stl"/>
+                    <mesh filename="file://$(find axebot_description)/meshes/rim.stl"/>
                 </geometry>
                 <material name="grey"/>
             </visual>
@@ -107,7 +107,7 @@
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="file://$(find nebula_description)/meshes/wheel-collision.dae"/>
+                    <mesh filename="file://$(find axebot_description)/meshes/wheel-collision.dae"/>
                 </geometry>
             </collision>
 

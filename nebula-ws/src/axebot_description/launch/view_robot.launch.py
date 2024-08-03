@@ -29,7 +29,7 @@ from launch.logging import LaunchLogger
 import xacro
 
 def generate_launch_description():
-    pkg_name = 'nebula_description'
+    pkg_name = 'axebot_description'
 
     only_wheel = LaunchConfiguration('only_wheel')
 
