@@ -25,6 +25,9 @@ Controller3wdOmniNode::Controller3wdOmniNode(const std::string & name)
         0.0, 2.0 / std::sqrt(3.0), -wheel_separation_ / (3.0 * wheel_radius_),
         -1.0, -1.0 / std::sqrt(3.0), -wheel_separation_ / (3.0 * wheel_radius_);
 
+    // Log 
+    RCLCPP_INFO(this->get_logger(), "Controller3wdOmniNode Started");
+
 }
 
 void Controller3wdOmniNode::velocity_callback(const geometry_msgs::msg::TwistStamped & msg)
