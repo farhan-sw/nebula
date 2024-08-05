@@ -6,12 +6,12 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-    omni_wheel_controller:
-      type: omni_wheel_controller/OmniWheelController
-    
     simple_velocity_controller:
       type: velocity_controllers/JointGroupVelocityController
 
+    omni_wheel_controller:
+      type: omni_wheel_controller/OmniWheelController
+    
 simple_velocity_controller:
   ros__parameters:
     joints:
