@@ -23,6 +23,8 @@ unset CMAKE_PREFIX_PATH
 killall gzserver
 killall gzclient
 ```
+atau edit bashrc
+```bash
 
 ### References
 - [1] [Gamepad by piborg](https://github.com/piborg/Gamepad)
