@@ -19,7 +19,7 @@ private:
     double wheel_radius_;
     double wheel_separation_;
 
-    Eigen::Matrix2d speed_conversion_;
+    Eigen::Matrix3d speed_conversion_;
 };
 
 
