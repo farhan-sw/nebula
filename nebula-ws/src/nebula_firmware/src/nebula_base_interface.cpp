@@ -46,9 +46,20 @@ namespace nebula_firmware
         /* === END SUBSCRIBE TO CAN BUS TOPIC AND PUBLISH TO CAN BUS TOPIC ============== */
 
         
-        velocity_command_.reserve(info_.joints.size());
-        position_state_.reserve(info_.joints.size());
-        velocity_state_.reserve(info_.joints.size());
+        // Reserve vectors
+        RCLCPP_INFO(rclcpp::get_logger("NebulaInterface"), "Number of joints: %zu", info_.joints.size());
+
+        try {
+            velocity_command_.reserve(info_.joints.size());
+            position_state_.reserve(info_.joints.size());
+            velocity_state_.reserve(info_.joints.size());
+        } catch (const std::exception &e) {
+            RCLCPP_ERROR(rclcpp::get_logger("NebulaInterface"), "Exception caught during vector reservation: %s", e.what());
+            return CallbackReturn::FAILURE;
+        } catch (...) {
+            RCLCPP_ERROR(rclcpp::get_logger("NebulaInterface"), "Unknown exception caught during vector reservation");
+            return CallbackReturn::FAILURE;
+        }
 
         last_run_ = rclcpp::Clock().now();
 
@@ -83,6 +94,8 @@ namespace nebula_firmware
             command_interfaces.emplace_back(hardware_interface::CommandInterface(info_.joints[i].name, 
                 hardware_interface::HW_IF_VELOCITY, &velocity_command_[i]));
         }
+
+        return command_interfaces;
     }
 
 
@@ -91,9 +104,9 @@ namespace nebula_firmware
         RCLCPP_INFO(rclcpp::get_logger("NebulaInterface"), "Nebula Base Interface in on_activate");
 
         // Create initial value
-        velocity_command_ = {0.0, 0.0, 0.0, 0.0};
-        position_state_ = {0.0, 0.0, 0.0, 0.0};
-        velocity_state_ = {0.0, 0.0, 0.0, 0.0};
+        velocity_command_ = {0.0, 0.0, 0.0};
+        position_state_ = {0.0, 0.0, 0.0};
+        velocity_state_ = {0.0, 0.0, 0.0};
 
         // Create timer
         try{
@@ -146,13 +159,11 @@ namespace nebula_firmware
             velocity_state_.at(0) = static_cast<double>(msg->data[0] | (msg->data[1] << 8));
             velocity_state_.at(1) = static_cast<double>(msg->data[2] | (msg->data[3] << 8));
             velocity_state_.at(2) = static_cast<double>(msg->data[4] | (msg->data[5] << 8));
-            velocity_state_.at(3) = static_cast<double>(msg->data[6] | (msg->data[7] << 8));
 
             /* EKSTRAK POSISI (based on dt)*/
             position_state_.at(0) += velocity_state_[0] * dt;
             position_state_.at(1) += velocity_state_[1] * dt;
             position_state_.at(2) += velocity_state_[2] * dt;
-            position_state_.at(3) += velocity_state_[3] * dt;
         }
 
         last_run_ = rclcpp::Clock().now();
@@ -167,31 +178,44 @@ namespace nebula_firmware
         can_frame_write_.is_rtr = false;
         can_frame_write_.is_extended = false;
         can_frame_write_.is_error = false;
-        can_frame_write_.dlc = 8; 
+        can_frame_write_.dlc = 8;
 
-        /* KONTRUKSI MSG ID */
+        /* KONSTRUKSI MSG ID */
         // bit ke 0-4 diisi CMD_ID, bit ke 5-10 diisi device_id_
         can_frame_write_.id = SET_BASE_VELOCITY | (device_id_ << 5);
 
-        // Convert int16_t to byte array
-        can_frame_write_.data[0] = static_cast<uint8_t>(static_cast<int>(velocity_command_[0]) & 0xFF);
-        can_frame_write_.data[1] = static_cast<uint8_t>(static_cast<int>(static_cast<int>(velocity_command_[0]) >> 8) & 0xFF);
-        can_frame_write_.data[2] = static_cast<uint8_t>(static_cast<int>(velocity_command_[1]) & 0xFF);
-        can_frame_write_.data[3] = static_cast<uint8_t>(static_cast<int>(static_cast<int>(velocity_command_[1]) >> 8) & 0xFF);
-        can_frame_write_.data[4] = static_cast<uint8_t>(static_cast<int>(velocity_command_[2]) & 0xFF);
-        can_frame_write_.data[5] = static_cast<uint8_t>(static_cast<int>(static_cast<int>(velocity_command_[2]) >> 8) & 0xFF);
-        can_frame_write_.data[6] = static_cast<uint8_t>(static_cast<int>(velocity_command_[3]) & 0xFF);
-        can_frame_write_.data[7] = static_cast<uint8_t>(static_cast<int>(static_cast<int>(velocity_command_[3]) >> 8) & 0xFF);
-
-        try{
-            to_can_pub_->publish(can_frame_write_);
-        } catch (const std::exception &e) {
-            RCLCPP_ERROR(node_->get_logger(), "Exception caught while publishing message: %s", e.what());
-        } catch (...) {
-            RCLCPP_ERROR(node_->get_logger(), "Unknown exception caught while publishing message");
+        // Kalikan velocity_command_ dengan 1000 dan konversi menjadi int16
+        int16_t velocity_command_int[3];
+        for (size_t i = 0; i < 3; ++i)
+        {
+            velocity_command_int[i] = static_cast<int16_t>(velocity_command_[i] * 1000);
         }
 
+        // Ubah int16_t menjadi byte array dan masukkan ke dalam pesan CAN
+        for (size_t i = 0; i < 3; ++i)
+        {
+            can_frame_write_.data[2 * i]     = static_cast<uint8_t>(velocity_command_int[i] & 0xFF);
+            can_frame_write_.data[2 * i + 1] = static_cast<uint8_t>((velocity_command_int[i] >> 8) & 0xFF);
+        }
+
+        // Isi 6-7 dengan 0
+        can_frame_write_.data[6] = 0;
+        can_frame_write_.data[7] = 0;
+
+        try
+        {
+            to_can_pub_->publish(can_frame_write_);
+        }
+        catch (const std::exception &e)
+        {
+            RCLCPP_ERROR(node_->get_logger(), "Exception caught while publishing message: %s", e.what());
+        }
+        catch (...)
+        {
+            RCLCPP_ERROR(node_->get_logger(), "Unknown exception caught while publishing message");
+        }
     }
+
 
 
 }

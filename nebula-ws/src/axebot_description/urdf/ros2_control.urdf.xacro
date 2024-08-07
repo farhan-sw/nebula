@@ -11,9 +11,22 @@
     </xacro:macro>
 
     <ros2_control name="GazeboSystem" type="system">
-        <hardware>
-            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
-        </hardware>
+
+        <!-- ros2 control gazebo system plugin -->
+        <xacro:if value="$(arg is_sim)">
+            <hardware>
+                <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+            </hardware>
+        </xacro:if>
+
+        <xacro:unless value="$(arg is_sim)">
+            <hardware>
+                <plugin>nebula_firmware/NebulaBaseInterface</plugin>
+                <param name="device_id_" value="1"/>
+            </hardware>
+        </xacro:unless>
+
+
         <xacro:ros2_control_wheel_joint suffix="1"/>
         <xacro:ros2_control_wheel_joint suffix="2"/>
         <xacro:ros2_control_wheel_joint suffix="3"/>
