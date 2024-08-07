@@ -34,28 +34,26 @@ namespace nebula_firmware
             virtual hardware_interface::return_type write(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
         private:
-            can_msgs::msg::Frame can_frame_read_;
             can_msgs::msg::Frame can_frame_write_;
 
             std::vector<double> velocity_command_;
             std::vector<double> position_state_;
             std::vector<double> velocity_state_;
 
+            int16_t velocity_int[4];
+            int16_t velocity_command_int[4];
+
             rclcpp::Time last_run_;
 
             std::shared_ptr<rclcpp::Node> node_;
             rclcpp::Subscription<can_msgs::msg::Frame>::SharedPtr from_can_sub_;
             rclcpp::Publisher<can_msgs::msg::Frame>::SharedPtr to_can_pub_;
-            rclcpp::TimerBase::SharedPtr timer_;
 
             double publish_frequency_ = PUBLISH_RATE_HZ;
             int device_id_ = 1;
 
             void from_can_callback(const can_msgs::msg::Frame::SharedPtr msg);
-            void timer_callback();
 
-            
-            
 
     };
 }  // namespace nebula_firmware

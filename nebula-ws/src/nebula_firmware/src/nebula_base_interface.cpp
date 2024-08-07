@@ -108,14 +108,6 @@ namespace nebula_firmware
         position_state_ = {0.0, 0.0, 0.0};
         velocity_state_ = {0.0, 0.0, 0.0};
 
-        // Create timer
-        try{
-            timer_ = node_->create_wall_timer(std::chrono::milliseconds(static_cast<int64_t>(1000/publish_frequency_)), 
-            std::bind(&NebulaBaseInterface::timer_callback, this));
-        } catch (...) {
-            RCLCPP_ERROR(node_->get_logger(), "Unknown exception caught while creating timer");
-            return CallbackReturn::FAILURE;
-        }
         RCLCPP_INFO(rclcpp::get_logger("NebulaInterface"), "timer started, ready to publish");
         return CallbackReturn::SUCCESS;
         
@@ -125,7 +117,12 @@ namespace nebula_firmware
     {
         RCLCPP_INFO(rclcpp::get_logger("NebulaInterface"), "Nebula Base Interface in on_deactivate");
         try{
-            timer_->cancel();
+            from_can_sub_.reset();
+            to_can_pub_.reset();
+            node_.reset();
+        } catch (const std::exception &e) {
+            RCLCPP_ERROR(node_->get_logger(), "Exception caught while cancelling timer: %s", e.what());
+            return CallbackReturn::FAILURE;
         } catch (...) {
             RCLCPP_ERROR(node_->get_logger(), "Unknown exception caught while cancelling timer");
             return CallbackReturn::FAILURE;
@@ -144,34 +141,6 @@ namespace nebula_firmware
 
     hardware_interface::return_type NebulaBaseInterface::write(const rclcpp::Time &time, const rclcpp::Duration &period)
     {
-        return hardware_interface::return_type::OK;
-    }
-
-    void NebulaBaseInterface::from_can_callback(const can_msgs::msg::Frame::SharedPtr msg)
-    {
-        auto dt = (rclcpp::Clock().now() - last_run_).seconds();
-
-        // Callback untuk membaca data dari CAN
-        // Pastikan 5 bit pertama dari msg,id sama dengan GET_BASE_VELOCITY
-        if((msg->id & 0x1F) == GET_BASE_VELOCITY)
-        {
-            /* EKSTRAK VELOCITY */
-            velocity_state_.at(0) = static_cast<double>(msg->data[0] | (msg->data[1] << 8));
-            velocity_state_.at(1) = static_cast<double>(msg->data[2] | (msg->data[3] << 8));
-            velocity_state_.at(2) = static_cast<double>(msg->data[4] | (msg->data[5] << 8));
-
-            /* EKSTRAK POSISI (based on dt)*/
-            position_state_.at(0) += velocity_state_[0] * dt;
-            position_state_.at(1) += velocity_state_[1] * dt;
-            position_state_.at(2) += velocity_state_[2] * dt;
-        }
-
-        last_run_ = rclcpp::Clock().now();
-    }
-
-
-    void NebulaBaseInterface::timer_callback()
-    {
         // Callback untuk publish data ke CAN
         can_frame_write_.header.stamp = rclcpp::Clock().now();
         can_frame_write_.header.frame_id = "frame_id";
@@ -185,7 +154,6 @@ namespace nebula_firmware
         can_frame_write_.id = SET_BASE_VELOCITY | (device_id_ << 5);
 
         // Kalikan velocity_command_ dengan 1000 dan konversi menjadi int16
-        int16_t velocity_command_int[3];
         for (size_t i = 0; i < 3; ++i)
         {
             velocity_command_int[i] = static_cast<int16_t>(velocity_command_[i] * 1000);
@@ -214,8 +182,34 @@ namespace nebula_firmware
         {
             RCLCPP_ERROR(node_->get_logger(), "Unknown exception caught while publishing message");
         }
+
+        return hardware_interface::return_type::OK;
     }
 
+    void NebulaBaseInterface::from_can_callback(const can_msgs::msg::Frame::SharedPtr msg)
+    {
+        auto dt = (rclcpp::Clock().now() - last_run_).seconds();
+
+        // Callback untuk membaca data dari CAN
+        // Pastikan 5 bit pertama dari msg->id sama dengan GET_BASE_VELOCITY
+        if((msg->id & 0x1F) == GET_BASE_VELOCITY)
+        {
+            /* EKSTRAK VELOCITY */
+            for (size_t i = 0; i < 3; ++i)
+            {
+                velocity_int[i] = static_cast<int16_t>(msg->data[2 * i] | (msg->data[2 * i + 1] << 8));
+                velocity_state_.at(i) = static_cast<double>(velocity_int[i]) / 1000.0;
+            }
+
+            /* EKSTRAK POSISI (based on dt) */
+            for (size_t i = 0; i < 3; ++i)
+            {
+                position_state_.at(i) += velocity_state_.at(i) * dt;
+            }
+        }
+
+        last_run_ = rclcpp::Clock().now();
+    }
 
 
 }
