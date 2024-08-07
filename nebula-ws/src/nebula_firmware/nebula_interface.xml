@@ -1,0 +1,9 @@
+<library path="nebula_firmware" >
+    <class name="nebula_firmware/NebulaBaseInterface"
+           type="nebula_firmware::NebulaBaseInterface"
+           base_class_type="hardware_interface::SystemInterface">
+        <description>
+            This class provides the interface to the Nebula firmware. for 3wd and 4wd robots of omni
+        </description>
+    </class>
+</library>

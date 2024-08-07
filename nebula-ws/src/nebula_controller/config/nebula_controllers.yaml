@@ -50,8 +50,10 @@ omni_wheel_controller:
   ros__parameters:
     omni_wheel_names: ['wheel1_joint', 'wheel2_joint', 'wheel3_joint']
     omni_wheel_angle: [3.1415926535897931, -1.047197551, 1.047197551]
-    omni_wheel_distance: 0.1
-    wheel_radius: 0.0508
+
+    omni_wheel_distance: 0.075
+    wheel_radius: 0.23
+
     odom_frame_id: odom
     base_frame_id: base_link
 
@@ -59,26 +61,29 @@ omni_wheel_controller:
     twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
 
     enable_odom_tf: true
-    cmd_vel_timeout: 3.0
+    cmd_vel_timeout: 0.5
     publish_limited_velocity: true
     velocity_rolling_window_size: 10
+    publish_cmd: true
 
     # limits
     linear_x:
       has_velocity_limits: true
-      has_acceleration_limits: false
-      has_jerk_limits: false
+      has_acceleration_limits: true
+      has_jerk_limits: true
       max_velocity: 1.0
       min_velocity: -1.0
       max_acceleration: 0.4
       min_acceleration: -0.4
       max_jerk: 0.5
       min_jerk: -0.5
+    
+
 
     angular_z:
       has_velocity_limits: true
-      has_acceleration_limits: false
-      has_jerk_limits: false
+      has_acceleration_limits: true
+      has_jerk_limits: true
       max_velocity: 1.5
       min_velocity: -1.5
       max_acceleration: 0.8

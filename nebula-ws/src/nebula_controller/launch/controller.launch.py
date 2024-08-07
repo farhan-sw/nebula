@@ -16,7 +16,7 @@ def generate_launch_description():
     
     use_alternate_omni_controller_arg = DeclareLaunchArgument(
         'use_alternate_omni_controller',
-        default_value='true',
+        default_value='false',
         description='Use custom omnidirectional controller (true) or default omnidirectional controller (false)',
     )
     
