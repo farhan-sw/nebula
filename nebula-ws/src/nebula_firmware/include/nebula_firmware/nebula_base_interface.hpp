@@ -7,6 +7,7 @@
 #include <rclcpp_lifecycle/state.hpp>
 
 #include <vector>
+#include <string>
 
 #include "can_msgs/msg/frame.hpp"
 #include "nebula_firmware/CAN_COMMAND_ID.hpp"
@@ -49,7 +50,7 @@ namespace nebula_firmware
             rclcpp::Subscription<can_msgs::msg::Frame>::SharedPtr from_can_sub_;
             rclcpp::Publisher<can_msgs::msg::Frame>::SharedPtr to_can_pub_;
 
-            int device_id_ = 1;
+            int device_id_=1;
 
             void from_can_callback(const can_msgs::msg::Frame::SharedPtr msg);
 

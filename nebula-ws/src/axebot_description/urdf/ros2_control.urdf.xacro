@@ -22,7 +22,7 @@
         <xacro:unless value="$(arg is_sim)">
             <hardware>
                 <plugin>nebula_firmware/NebulaBaseInterface</plugin>
-                <param name="device_id_" value="1"/>
+                <param name="device_id">2</param>
             </hardware>
         </xacro:unless>
 

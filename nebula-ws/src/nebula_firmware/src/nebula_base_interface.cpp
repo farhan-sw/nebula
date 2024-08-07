@@ -1,6 +1,9 @@
 #include "nebula_firmware/nebula_base_interface.hpp"
 #include <hardware_interface/types/hardware_interface_type_values.hpp>
 
+
+
+
 namespace nebula_firmware
 {
     NebulaBaseInterface::NebulaBaseInterface()
@@ -20,6 +23,14 @@ namespace nebula_firmware
     {
         // on_init
         RCLCPP_INFO(rclcpp::get_logger("NebulaInterface"), "Nebula Base Interface in on_init");
+
+        try{
+            device_id_ = std::stoi(hardware_info.hardware_parameters.at("device_id"));
+        } catch (...) {
+            RCLCPP_ERROR(rclcpp::get_logger("NebulaInterface"), "Failed to get device_id from hardware_parameters");
+            return CallbackReturn::FAILURE;
+        }
+        RCLCPP_INFO(rclcpp::get_logger("NebulaInterface"), "Device ID: %d", device_id_);
 
         /* ======================= PREPARE HARDWARE INFO ======================= */
         CallbackReturn result = hardware_interface::SystemInterface::on_init(hardware_info);
