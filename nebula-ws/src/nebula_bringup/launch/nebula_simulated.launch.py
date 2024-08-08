@@ -21,7 +21,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             "use_simple_controller": LaunchConfiguration("use_simple_controller", default="False"),
-            "use_alternate_omni_controller": LaunchConfiguration("use_alternate_omni_controller", default="False")
+            "use_alternate_omni_controller": LaunchConfiguration("use_alternate_omni_controller", default="True")
         }.items()
     )
     

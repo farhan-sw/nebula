@@ -16,7 +16,7 @@ def generate_launch_description():
     
     use_alternate_omni_controller_arg = DeclareLaunchArgument(
         'use_alternate_omni_controller',
-        default_value='false',
+        default_value='true',
         description='Use custom omnidirectional controller (true) or default omnidirectional controller (false)',
     )
     
@@ -50,9 +50,10 @@ def generate_launch_description():
             Node(
                 package="controller_manager",
                 executable="spawner",
-                arguments=["omni_wheel_controller", 
-                           "--controller-manager", 
-                           "/controller_manager"],
+                arguments=[
+                    "omni_wheel_controller", 
+                    "--controller-manager", 
+                    "/controller_manager"],
                 condition=UnlessCondition(use_alternate_omni_controller)
             ),
             
@@ -68,9 +69,6 @@ def generate_launch_description():
             )
         ]
     )
-   
-    
-
     
     # Simple controller
     simple_controller = GroupAction(

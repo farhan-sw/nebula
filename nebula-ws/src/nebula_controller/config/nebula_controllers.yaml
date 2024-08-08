@@ -1,5 +1,6 @@
 controller_manager:
   ros__parameters:
+    use_sim_time: true
     update_rate: 50
 
     joint_state_broadcaster:
@@ -28,8 +29,10 @@ omnidirectional_controller:
       - wheel2_joint
       - wheel3_joint
 
-    robot_radius: 0.075
-    wheel_radius: 0.23
+    # robot_radius: 0.075
+    # wheel_radius: 0.23
+    robot_radius: 0.1
+    wheel_radius: 0.053112205
     gamma: 30.0 # angle between body fixed y axis and the normal of wheel3
 
     publish_rate: 50.0
@@ -47,11 +50,17 @@ omnidirectional_controller:
     
 omni_wheel_controller:
   ros__parameters:
-    omni_wheel_names: ['wheel1_joint', 'wheel2_joint', 'wheel3_joint']
-    omni_wheel_angle: [3.1415926535897931, -1.047197551, 1.047197551]
+    # omni_wheel_names: ['wheel1_joint', 'wheel2_joint', 'wheel3_joint']
+    # omni_wheel_angle: [3.1415926535897931, -1.047197551, 1.047197551]
 
-    omni_wheel_distance: 0.075
-    wheel_radius: 0.23
+    omni_wheel_names: ['wheel1_joint', 'wheel2_joint', 'wheel3_joint']
+    omni_wheel_angle: [3.1415926535897931, 1.047197551, -1.047197551]
+
+    # omni_wheel_distance: 0.075
+    # wheel_radius: 0.23
+
+    omni_wheel_distance: 0.1
+    wheel_radius: 0.053112205
 
     odom_frame_id: odom
     base_frame_id: base_link
