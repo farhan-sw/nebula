@@ -20,8 +20,17 @@ def generate_launch_description():
         parameters=[os.path.join(get_package_share_directory('nebula_controller'), 'config', 'joy_teleop.yaml')],
     )
     
+    twist_mux = Node(
+        package='twist_mux',
+        executable='twist_mux',
+        name='twist_mux',
+        parameters=[os.path.join(get_package_share_directory('nebula_controller'), 'config', 'twist_mux.yaml')],
+        remappings=[('/cmd_vel_out', '/omnidirectional_controller/cmd_vel_unstamped')],
+    )
+    
     return LaunchDescription([
         joy_node,
         joy_teleop,
+        twist_mux,
     ])
     
