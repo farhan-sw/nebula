@@ -135,3 +135,8 @@ Jalankan skrip dengan perintah berikut:
 ```bash
 ./setup_can.sh
 ```
+
+## Setup Dependencies
+```bash
+sudo apt install ros-humble-twist-mux
+```
