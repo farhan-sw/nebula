@@ -25,6 +25,7 @@ killall gzclient
 ```
 atau edit bashrc
 ```bash
+. /usr/share/gazebo/setup.sh
 ```
 
 ### 2024-Agus-9
