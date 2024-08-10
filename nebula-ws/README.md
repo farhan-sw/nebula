@@ -38,5 +38,18 @@ ubah lokasi room.yaml sesuai dengan lokasi file map
 - Error topic map gabisa muncul di rviz
 -- ubah dulu ke fixed frame /map, kemudian baru add map, ubah ke volatile
 
+### 2024-Agus-10
+- Instalasi pointcloud to laser scan
+```bash
+sudo apt install ros-humble-pointcloud-to-laserscan
+```
+
 ### References
+
+#### BASE
 - [1] [Gamepad by piborg](https://github.com/piborg/Gamepad)
+- [2] [Omni Controller (3wd didnt work)](https://github.com/hijimasa/omni_wheel_controller)
+- [3] [Omni Controller (3wd work)](https://github.com/mateusmenezes95/omnidirectional_controllers)
+- [4] [Axebot - 3wd](https://github.com/mateusmenezes95/axebot)
+
+#### NAVIGATION & LOCALIZATION
