@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-
-
     <link name="camera_link">
         <visual>
             <geometry>
-                <box size="0.010 0.03 0.03"/>
+                <box size="0.066 0.249 0.067"/>
             </geometry>
             <material name="red"/>
         </visual>
@@ -15,7 +13,7 @@
     <joint name="camera_joint" type="fixed">
         <parent link="base_link"/>
         <child link="camera_link"/>
-        <origin xyz="0.0 0 0.5" rpy="0 0 0"/>
+        <origin xyz="-0.13 0 0.25" rpy="0 0 0"/>
     </joint>
 
 
@@ -43,8 +41,8 @@
                     <height>480</height>
                 </image>
                 <clip>
-                    <near>0.05</near>
-                    <far>8.0</far>
+                    <near>0.04</near>
+                    <far>5.0</far>
                 </clip>
             </camera>
             <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
