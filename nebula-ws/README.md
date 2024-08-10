@@ -42,6 +42,7 @@ ubah lokasi room.yaml sesuai dengan lokasi file map
 - Instalasi pointcloud to laser scan
 ```bash
 sudo apt install ros-humble-pointcloud-to-laserscan
+ros2 run pointcloud_to_laserscan pointcloud_to_laserscan_node --ros-args --params-file /home/farhan-sw/Documents/Github/nebula/nebula-ws/src/nebula_navigation/config/pointcloud_to_laserscan_params.yaml -r /cloud_in:=/camera/points -r /scan:=/scanner/scan
 ```
 
 ### References

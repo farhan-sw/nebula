@@ -7,7 +7,7 @@ pointcloud_to_laserscan:
     angle_increment: 0.00872665        # Resolution of laser scan in radians per ray (π/360)
     scan_time: 0.0333                # The scan rate in seconds (1.0/30.0)
     range_min: 0.04                    # Minimum range to return in meters
-    range_max: 5.0                    # Maximum range to return in meters
+    range_max: 12.0                    # Maximum range to return in meters
     target_frame: "base_link"                   # Target frame for transforming the pointcloud, set to empty for none
     concurrency_level: 1               # Number of threads to use for processing pointclouds
     use_inf: true                      # Report infinite range as +inf
