@@ -54,3 +54,5 @@ ros2 run pointcloud_to_laserscan pointcloud_to_laserscan_node --ros-args --param
 - [4] [Axebot - 3wd](https://github.com/mateusmenezes95/axebot)
 
 #### NAVIGATION & LOCALIZATION
+- [1] [Pointcloud to Laser Scan](https://wiki.ros.org/pointcloud_to_laserscan)
+- [2] [twist_mux]()
