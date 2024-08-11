@@ -29,12 +29,11 @@ omnidirectional_controller:
       - wheel2_joint
       - wheel3_joint
 
-    # robot_radius: 0.28867   
-    # wheel_radius: 0.075
-    # gamma: 30.0 # angle between body fixed y axis and the normal of wheel3
+    # robot_radius: 0.075
+    # wheel_radius: 0.23
+    robot_radius: 0.28867
+    wheel_radius: 0.075
 
-    robot_radius: 0.1
-    wheel_radius: 0.053112205
     gamma: 30.0 # angle between body fixed y axis and the normal of wheel3
 
     publish_rate: 50.0
@@ -47,7 +46,7 @@ omnidirectional_controller:
     open_loop: false
     enable_odom_tf: true
 
-    cmd_vel_timeout: 0.5
+    cmd_vel_timeout: 0.25
     use_stamped_vel: false
     
 omni_wheel_controller:

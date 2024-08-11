@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:property name="distance_to_roller_center" value="0.04645"/>
+    <xacro:property name="distance_to_roller_center" value="0.068337795"/>
 
     <xacro:macro name="inertial_cylinder" params="mass length radius *origin">
         <inertial>
