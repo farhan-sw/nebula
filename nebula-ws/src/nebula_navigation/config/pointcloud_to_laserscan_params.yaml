@@ -1,0 +1,13 @@
+pointcloud_to_laserscan:
+  ros__parameters:
+    min_height: 0.1                 # Minimum height to sample in the point cloud (meters)
+    max_height: 2.0                    # Maximum height to sample in the point cloud (meters)
+    angle_min: -1.5708                 # Minimum scan angle in radians (-π/2)
+    angle_max: 1.5708                  # Maximum scan angle in radians (π/2)
+    angle_increment: 0.00872665        # Resolution of laser scan in radians per ray (π/360)
+    scan_time: 0.0333                # The scan rate in seconds (1.0/30.0)
+    range_min: 0.04                    # Minimum range to return in meters
+    range_max: 12.0                    # Maximum range to return in meters
+    target_frame: "base_link"                   # Target frame for transforming the pointcloud, set to empty for none
+    concurrency_level: 1               # Number of threads to use for processing pointclouds
+    use_inf: true                      # Report infinite range as +inf

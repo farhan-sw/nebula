@@ -55,12 +55,12 @@ joy_teleop:
 
       axis_mappings:
         linear-x: 
-          axis: 0
-          scale: -0.3
-          offset: 0.0
-        linear-y: 
           axis: 1
           scale: 0.3
+          offset: 0.0
+        linear-y: 
+          axis: 0
+          scale: -0.3
           offset: 0.0
         angular-z:
           axis: 3
