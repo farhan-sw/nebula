@@ -1,10 +1,13 @@
 
 ## LOG
+https://docs.ros.org/en/humble/p/
 
 ### 2024-Jul-18
 - Install gamepad library
 ```bash
+sudo apt install libopencv-dev
 sudo apt install joystick jstest-gtk evtest
+sudo apt install ros-humble-ros2-socketcan
 ```
 
 using reference [gamepad](https://articulatedrobotics.xyz/tutorials/mobile-robot/applications/teleop/)
@@ -45,6 +48,21 @@ sudo apt install ros-humble-pointcloud-to-laserscan
 ros2 run pointcloud_to_laserscan pointcloud_to_laserscan_node --ros-args --params-file /home/farhan-sw/Documents/Github/nebula/nebula-ws/src/nebula_navigation/config/pointcloud_to_laserscan_params.yaml -r /cloud_in:=/camera/points -r /scan:=/scanner/scan
 ```
 
+### 2024-Agus-11
+- Kinect cuman lewat depth image?
+```bash
+sudo apt install ros-humble-depthimage-to-laserscan
+```
+- Fuse IMU sensor
+```bash
+imu_filter_madgwick
+```
+https://wiki.ros.org/imu_filter_madgwick
+
+- ROS2 Kinct driver
+https://github.com/fadlio/kinect_ros2
+
+
 ### References
 
 #### BASE
@@ -56,3 +74,6 @@ ros2 run pointcloud_to_laserscan pointcloud_to_laserscan_node --ros-args --param
 #### NAVIGATION & LOCALIZATION
 - [1] [Pointcloud to Laser Scan](https://wiki.ros.org/pointcloud_to_laserscan)
 - [2] [twist_mux]()
+
+#### HARDWARE
+- [1] [CAN BUS, Ros2 sockerCAN]
