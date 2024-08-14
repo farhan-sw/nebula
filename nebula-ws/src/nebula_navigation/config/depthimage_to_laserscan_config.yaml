@@ -1,0 +1,7 @@
+depthimage_to_laserscan_node:
+  ros__parameters:
+    scan_height: 300              # Number of pixel rows to use for the scan
+    scan_time: 0.033             # Time between scans in seconds
+    range_min: 0.45              # Minimum range in meters
+    range_max: 10.0              # Maximum range in meters
+    output_frame_id: camera_depth_frame  # Frame ID for the output scan

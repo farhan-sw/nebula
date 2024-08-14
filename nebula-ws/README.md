@@ -62,6 +62,17 @@ https://wiki.ros.org/imu_filter_madgwick
 - ROS2 Kinct driver
 https://github.com/fadlio/kinect_ros2
 
+### 2024-Agus-14
+- Install ROS2 CAN BUS
+```bash
+sudo apt install ros-humble-ros2-socketcan
+```
+- Setup Depth Image to Laser Scan
+```bash
+sudo apt install ros-humble-depthimage-to-laserscan
+ros2 run depthimage_to_laserscan depthimage_to_laserscan_node --ros-args --params-file ~/Documents/Github/nebula/nebula-ws/src/nebula_navigation/config/depthimage_to_laserscan_config.yaml   -r depth:=/camera/depth/image_raw   -r depth_camera_info:=/camera/depth/camera_info   -r scan:=/scan
+```
+
 
 ### References
 
