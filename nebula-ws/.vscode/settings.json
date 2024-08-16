@@ -135,5 +135,6 @@
     "typeindex": "cpp",
     "typeinfo": "cpp",
     "variant": "cpp"
-  }
+  },
+  "ros.distro": "humble"
 }
