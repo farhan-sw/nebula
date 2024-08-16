@@ -73,6 +73,21 @@ sudo apt install ros-humble-depthimage-to-laserscan
 ros2 run depthimage_to_laserscan depthimage_to_laserscan_node --ros-args --params-file ~/Documents/Github/nebula/nebula-ws/src/nebula_navigation/config/depthimage_to_laserscan_config.yaml   -r depth:=/camera/depth/image_raw   -r depth_camera_info:=/camera/depth/camera_info   -r scan:=/scan
 ```
 
+### 2024-Agus-16
+- ERROR GAZEBO LAMA, ingat
+```bash
+sudo apt-get install ros-humble-gazebo-ros2-control
+```
+
+- Pastiitn semua nav2 sudah terinstall
+```bash
+sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup
+```
+
+- Tambahan turtlebot3
+```bash
+sudo apt install ros-humble-turtlebot3*
+```
 
 ### References
 
