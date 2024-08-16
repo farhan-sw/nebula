@@ -89,6 +89,12 @@ sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup
 sudo apt install ros-humble-turtlebot3*
 ```
 
+- Plotting gunakan plotjuggler
+```bash
+sudo apt install ros-humble-plotjuggler
+sudo apt install ros-humble-plotjuggler-ros
+```
+
 ### References
 
 #### BASE
