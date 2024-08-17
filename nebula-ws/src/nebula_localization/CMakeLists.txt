@@ -22,15 +22,20 @@ install(
 add_executable(kalman_filter src/kalman_filter.cpp)
 ament_target_dependencies(kalman_filter rclcpp sensor_msgs nav_msgs)
 
+add_executable(imu_republisher src/imu_republisher.cpp)
+ament_target_dependencies(imu_republisher rclcpp sensor_msgs nav_msgs)
+
 install(TARGETS
   kalman_filter
+  imu_republisher
   DESTINATION lib/${PROJECT_NAME}
 )
 
 # Install launch file, urdf file, config file, or other files
 install(
-  DIRECTORY launch
+  DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
+
 
 ament_package()

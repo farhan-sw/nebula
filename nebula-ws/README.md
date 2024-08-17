@@ -95,6 +95,13 @@ sudo apt install ros-humble-plotjuggler
 sudo apt install ros-humble-plotjuggler-ros
 ```
 
+### 2024-Agus-17
+- Install robot_localization
+https://docs.ros.org/en/noetic/api/robot_localization/html/configuring_robot_localization.html
+```bash
+sudo apt install ros-humble-robot-localization
+```
+
 ### References
 
 #### BASE
