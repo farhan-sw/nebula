@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="nebula_localization" exec="kalman_filter" name="kalman_filter" output="screen">
+        <remap from="kalman_filter/odom_noisy" to="omnidirectional_controller/odom"/>
+        <remap from="kalman_filter/imu" to="imu/out"/>
+    </node>
+</launch>
